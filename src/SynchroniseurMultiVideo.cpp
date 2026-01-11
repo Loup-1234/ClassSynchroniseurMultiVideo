@@ -1,4 +1,4 @@
-#include "SynchroniseurMultiVideo.h"
+#include "../include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h"
 
 #include <iostream>
 #include <fstream>

@@ -13,6 +13,10 @@ pkg_check_modules(FFMPEG REQUIRED IMPORTED_TARGET
         libswresample
 )
 
-add_executable(ClassSynchroniseurMultiVideo main.cpp SynchroniseurMultiVideo.cpp SynchroniseurMultiVideo.h)
+add_executable(ClassSynchroniseurMultiVideo
+        include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h
+        src/main.cpp
+        src/SynchroniseurMultiVideo.cpp
+)
 
 target_link_libraries(ClassSynchroniseurMultiVideo PRIVATE PkgConfig::FFMPEG)
