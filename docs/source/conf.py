@@ -13,6 +13,8 @@ author = 'Loup_1234'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+language = 'fr'
+
 extensions = [
     'breathe',
 ]

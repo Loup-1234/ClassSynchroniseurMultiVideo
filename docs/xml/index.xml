@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.15.0" xml:lang="en-US">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.15.0" xml:lang="fr">
   <compound refid="structSynchroniseurMultiVideo_1_1InfoVideo" kind="struct"><name>SynchroniseurMultiVideo::InfoVideo</name>
     <member refid="structSynchroniseurMultiVideo_1_1InfoVideo_1a63ce9ff1a9c54f78ff70dc3adc8ddc98" kind="variable"><name>chemin</name></member>
     <member refid="structSynchroniseurMultiVideo_1_1InfoVideo_1a17e98b077524572f7e2befda3f29126c" kind="variable"><name>retardSecondes</name></member>
