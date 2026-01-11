@@ -5,25 +5,95 @@
 
 using namespace std;
 
+/**
+ * @class SynchroniseurMultiVideo
+ * @brief Classe permettant de synchroniser plusieurs vidéos basées sur leur piste audio.
+ *
+ * Cette classe analyse les pistes audio de plusieurs fichiers vidéo pour déterminer
+ * le décalage temporel entre elles et générer une vidéo synchronisée (par exemple, une vue mosaïque).
+ */
 class SynchroniseurMultiVideo {
+    /**
+     * @brief Fréquence d'échantillonnage audio utilisée pour l'analyse (en Hz).
+     */
     const int FREQUENCE_ECHANTILLONNAGE = 40000;
+
+    /**
+     * @brief Hauteur cible pour le redimensionnement des vidéos (en pixels).
+     */
     const int HAUTEUR_CIBLE = 480;
+
+    /**
+     * @brief Nom du fichier temporaire pour l'audio de référence.
+     */
     const string TEMP_AUDIO_REF = "temp_ref.raw";
+
+    /**
+     * @brief Nom du fichier temporaire pour l'audio cible.
+     */
     const string TEMP_AUDIO_CIBLE = "temp_cible.raw";
 
+    /**
+     * @struct InfoVideo
+     * @brief Structure stockant les informations relatives à une vidéo.
+     */
     struct InfoVideo {
-        string chemin;
-        double retardSecondes;
+        string chemin;          /**< Chemin d'accès au fichier vidéo. */
+        double retardSecondes;  /**< Retard calculé en secondes par rapport à la vidéo de référence. */
     };
 
+    /**
+     * @brief Extrait la piste audio d'un fichier vidéo vers un fichier brut.
+     *
+     * Utilise FFmpeg pour extraire l'audio, le convertir en mono, float 32-bit little-endian,
+     * à la fréquence d'échantillonnage définie. Seules les 30 premières secondes sont extraites.
+     *
+     * @param fichierVideo Chemin du fichier vidéo source.
+     * @param fichierAudioSortie Chemin du fichier audio de sortie (format brut).
+     * @throws runtime_error Si l'extraction échoue.
+     */
     void ExtraireAudio(const string &fichierVideo, const string &fichierAudioSortie) const;
 
+    /**
+     * @brief Charge des données audio brutes depuis un fichier.
+     *
+     * Lit un fichier binaire contenant des échantillons audio au format float.
+     *
+     * @param nomFichier Chemin du fichier audio brut.
+     * @return Un vecteur de flottants représentant les échantillons audio.
+     * @throws runtime_error Si le fichier ne peut pas être ouvert ou lu.
+     */
     static vector<float> ChargerAudioBrut(const string &nomFichier);
 
+    /**
+     * @brief Calcule le décalage temporel entre deux signaux audio.
+     *
+     * Utilise une méthode de corrélation croisée simplifiée pour estimer le décalage
+     * temporel entre le signal de référence et le signal cible.
+     *
+     * @param ref Vecteur des échantillons de l'audio de référence.
+     * @param cible Vecteur des échantillons de l'audio à synchroniser.
+     * @return Le décalage en secondes (positif ou négatif). Retourne 0.0 en cas d'erreur.
+     */
     double CalculerDecalage(const vector<float> &ref, const vector<float> &cible) const;
 
 public:
+    /**
+     * @brief Destructeur de la classe SynchroniseurMultiVideo.
+     *
+     * Supprime les fichiers temporaires créés lors de l'analyse audio.
+     */
     ~SynchroniseurMultiVideo();
 
+    /**
+     * @brief Génère une vidéo synchronisée à partir de plusieurs fichiers d'entrée.
+     *
+     * Orchestre le processus complet : extraction audio, calcul des décalages,
+     * et génération de la vidéo finale avec FFmpeg.
+     *
+     * @param fichiersEntree Liste des chemins des fichiers vidéo à synchroniser.
+     * @param fichierSortie Chemin du fichier vidéo de sortie.
+     * @return true si la génération a réussi, false sinon.
+     */
     bool GenererVideoSynchronisee(const vector<string> &fichiersEntree, const string &fichierSortie) const;
 };

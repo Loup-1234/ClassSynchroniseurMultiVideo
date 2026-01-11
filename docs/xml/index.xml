@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.15.0" xml:lang="en-US">
+  <compound refid="structSynchroniseurMultiVideo_1_1InfoVideo" kind="struct"><name>SynchroniseurMultiVideo::InfoVideo</name>
+    <member refid="structSynchroniseurMultiVideo_1_1InfoVideo_1a63ce9ff1a9c54f78ff70dc3adc8ddc98" kind="variable"><name>chemin</name></member>
+    <member refid="structSynchroniseurMultiVideo_1_1InfoVideo_1a17e98b077524572f7e2befda3f29126c" kind="variable"><name>retardSecondes</name></member>
+  </compound>
+  <compound refid="classSynchroniseurMultiVideo" kind="class"><name>SynchroniseurMultiVideo</name>
+    <member refid="classSynchroniseurMultiVideo_1a7511e956c6e9a93ac30d9aa5bffddcd7" kind="variable"><name>FREQUENCE_ECHANTILLONNAGE</name></member>
+    <member refid="classSynchroniseurMultiVideo_1af2a98bcabb273ce73a91d0eaf823118d" kind="variable"><name>HAUTEUR_CIBLE</name></member>
+    <member refid="classSynchroniseurMultiVideo_1a05ebb0fdcb6976829b6ef1bdbe5a26c3" kind="variable"><name>TEMP_AUDIO_REF</name></member>
+    <member refid="classSynchroniseurMultiVideo_1a11aa2d54a8fcce4aa1ca0d589bacf29f" kind="variable"><name>TEMP_AUDIO_CIBLE</name></member>
+    <member refid="classSynchroniseurMultiVideo_1adc0cee2e43449fd37e9b3628f140fb13" kind="function"><name>ExtraireAudio</name></member>
+    <member refid="classSynchroniseurMultiVideo_1a4fc0c4ae85ea430acca209a707504550" kind="function"><name>CalculerDecalage</name></member>
+    <member refid="classSynchroniseurMultiVideo_1a5c6093f5c6028dd75953d0cc7e8827b9" kind="function"><name>ChargerAudioBrut</name></member>
+    <member refid="classSynchroniseurMultiVideo_1a3eb3d7a7d856da575313caca3a50ede6" kind="function"><name>~SynchroniseurMultiVideo</name></member>
+    <member refid="classSynchroniseurMultiVideo_1abe9b4059307ef8a5e2c3a84eac6d3e8e" kind="function"><name>GenererVideoSynchronisee</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="SynchroniseurMultiVideo_8h" kind="file"><name>SynchroniseurMultiVideo.h</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="SynchroniseurMultiVideo_8cpp" kind="file"><name>SynchroniseurMultiVideo.cpp</name>
+  </compound>
+  <compound refid="dir_d86fe2cd60c9c6f9c688382c70563f5f" kind="dir"><name>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src</name>
+  </compound>
+</doxygenindex>

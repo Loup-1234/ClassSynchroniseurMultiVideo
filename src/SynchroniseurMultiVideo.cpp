@@ -1,3 +1,12 @@
+/**
+ * @file SynchroniseurMultiVideo.cpp
+ * @brief Implémentation de la classe SynchroniseurMultiVideo.
+ *
+ * Ce fichier contient le code source des méthodes de la classe SynchroniseurMultiVideo,
+ * incluant l'extraction audio via FFmpeg, le chargement des données brutes,
+ * le calcul de corrélation croisée et la génération de la vidéo finale.
+ */
+
 #include "../include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h"
 
 #include <iostream>
