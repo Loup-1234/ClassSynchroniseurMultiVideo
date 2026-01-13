@@ -3,23 +3,57 @@ project(ClassSynchroniseurMultiVideo)
 
 set(CMAKE_CXX_STANDARD 23)
 
-find_package(PkgConfig REQUIRED)
+# --- Configuration des Sources ---
 
-pkg_check_modules(FFMPEG REQUIRED IMPORTED_TARGET
-        libavcodec
-        libavformat
-        libavutil
-        libswscale
-        libswresample
-)
-
-add_executable(ClassSynchroniseurMultiVideo
-        include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h
+set(SOURCE_FILES
         src/main.cpp
         src/SynchroniseurMultiVideo.cpp
 )
 
-target_link_libraries(ClassSynchroniseurMultiVideo PRIVATE PkgConfig::FFMPEG)
+set(HEADER_FILES
+        include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h
+)
+
+add_executable(ClassSynchroniseurMultiVideo ${SOURCE_FILES} ${HEADER_FILES})
+
+# --- Configuration des Bibliothèques ---
+
+if(WIN32)
+    # --- WINDOWS ---
+    message(STATUS "Configuration pour Windows...")
+
+    set(FFMPEG_DIR "${CMAKE_SOURCE_DIR}/include/ffmpeg")
+
+    target_include_directories(ClassSynchroniseurMultiVideo PRIVATE ${FFMPEG_DIR}/include)
+
+    target_link_directories(ClassSynchroniseurMultiVideo PRIVATE ${FFMPEG_DIR}/lib)
+
+    target_link_libraries(ClassSynchroniseurMultiVideo PRIVATE
+            avcodec
+            avformat
+            avutil
+            swscale
+            swresample
+    )
+
+else()
+    # --- LINUX ---
+    message(STATUS "Configuration pour Linux...")
+
+    find_package(PkgConfig REQUIRED)
+
+    pkg_check_modules(FFMPEG REQUIRED IMPORTED_TARGET
+            libavcodec
+            libavformat
+            libavutil
+            libswscale
+            libswresample
+    )
+
+    target_link_libraries(ClassSynchroniseurMultiVideo PRIVATE PkgConfig::FFMPEG)
+endif()
+
+target_include_directories(ClassSynchroniseurMultiVideo PRIVATE include)
 
 # --- Documentation Target ---
 find_package(Doxygen)

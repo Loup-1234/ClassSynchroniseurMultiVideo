@@ -124,8 +124,7 @@ double SynchroniseurMultiVideo::CalculerDecalage(const vector<float> &ref, const
     }
 }
 
-bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const vector<string> &fichiersEntree,
-                                                       const string &fichierSortie) const {
+bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const vector<string> &fichiersEntree, const string &fichierSortie) const {
     try {
         if (fichiersEntree.size() < 2) {
             throw runtime_error("Il faut fournir au moins 2 fichiers video.");
@@ -141,9 +140,7 @@ bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const vector<string> &fic
             throw runtime_error(string("Erreur reference: ") + e.what());
         }
 
-        vector<float> audioRef;
-
-        audioRef = ChargerAudioBrut(TEMP_AUDIO_REF);
+        vector<float> audioRef = ChargerAudioBrut(TEMP_AUDIO_REF);
 
         if (audioRef.empty()) {
             throw runtime_error("Fichier audio reference vide ou illisible.");
