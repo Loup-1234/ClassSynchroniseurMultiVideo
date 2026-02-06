@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="todo" kind="page">
+    <compoundname>todo</compoundname>
+    <title>Liste des choses à faire</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Membre <ref refid="group__lavu__sampmanip_1ga4db4c77f928d32c7d8854732f50b8c04" kindref="member">av_samples_alloc</ref>  (uint8_t **audio_data, int *linesize, int nb_channels, int nb_samples, enum <ref refid="group__lavu__sampfmts_1gaf9a51ca15301871723577c730b5865c5" kindref="member">AVSampleFormat</ref> sample_fmt, int align)</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000004"/>return the size of the allocated buffer in case of success at the next bump  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="group__lavc__misc_1ga66b44aad56fa22a78fb8916eb8cc0516" kindref="member">avcodec_fill_audio_frame</ref>  (<ref refid="struct_a_v_frame" kindref="compound">AVFrame</ref> *frame, int nb_channels, enum <ref refid="group__lavu__sampfmts_1gaf9a51ca15301871723577c730b5865c5" kindref="member">AVSampleFormat</ref> sample_fmt, const uint8_t *buf, int buf_size, int align)</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000001"/>return the size in bytes required to store the samples in case of success, at the next libavutil bump  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="group__lavf__decoding_1gad42172e27cddafb81096939783b157bb" kindref="member">avformat_find_stream_info</ref>  (<ref refid="struct_a_v_format_context" kindref="compound">AVFormatContext</ref> *ic, AVDictionary **options)</term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000002"/>Let the user decide somehow what information is needed so that we do not waste time getting stuff the user does not need.  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_option_1a6c72d22b8c599e89abba088b85dfcd8a" kindref="member">AVOption::help</ref>  </term></varlistentry>
+<listitem><para><anchor id="todo_1_todo000003"/>What about other languages? </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="todo"/>
+  </compounddef>
+</doxygen>

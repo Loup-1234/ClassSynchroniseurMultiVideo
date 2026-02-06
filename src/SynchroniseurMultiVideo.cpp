@@ -124,7 +124,8 @@ double SynchroniseurMultiVideo::CalculerDecalage(const vector<float> &ref, const
     }
 }
 
-bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const vector<string> &fichiersEntree, const string &fichierSortie) const {
+bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const vector<string> &fichiersEntree,
+                                                       const string &fichierSortie) const {
     try {
         if (fichiersEntree.size() < 2) {
             throw runtime_error("Il faut fournir au moins 2 fichiers video.");
@@ -153,7 +154,7 @@ bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const vector<string> &fic
 
         // Boucle sur les vidéos cibles (à partir de la deuxième).
         for (int i = 1; i < fichiersEntree.size(); ++i) {
-            cout << "[2/3] Analyse video " << i << " : " << flush;
+            cout << "[2/3] Analyse angle " << i+1 << " : " << flush;
 
             try {
                 // Extrait l'audio de la vidéo cible actuelle dans un fichier temporaire.

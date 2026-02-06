@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+  <compounddef id="deprecated" kind="page">
+    <compoundname>deprecated</compoundname>
+    <title>Liste des éléments obsolètes</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term>Membre <ref refid="group__opt__read_1ga609699c6203944ac261b4dc05aafdd91" kindref="member">av_opt_ptr</ref>  (const <ref refid="struct_a_v_class" kindref="compound">AVClass</ref> *avclass, void *obj, const char *name)</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000013"/>direct access to AVOption-exported fields is not supported  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="group__lavf__misc_1gaa7769a3b3fd72994933aac4293803028" kindref="member">av_stream_get_codec_timebase</ref>  (const <ref refid="struct_a_v_stream" kindref="compound">AVStream</ref> *st)</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000011"/>do not call this function  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_codec_1a41e0031e9dc197ab5915f59d7d9c8dd3" kindref="member">AVCodec::ch_layouts</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000005"/>use <ref refid="group__lavc__decoding_1gadd58e6b0bbca99fdbc547efbaa6b0ef1" kindref="member">avcodec_get_supported_config()</ref>  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_codec_1a1bbb0e2b9dfb22d311cbc66730b86626" kindref="member">AVCodec::pix_fmts</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000002"/>use <ref refid="group__lavc__decoding_1gadd58e6b0bbca99fdbc547efbaa6b0ef1" kindref="member">avcodec_get_supported_config()</ref>  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_codec_1aa9d17e53b4b3e27e741b97f0cdb43c69" kindref="member">AVCodec::sample_fmts</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000004"/>use <ref refid="group__lavc__decoding_1gadd58e6b0bbca99fdbc547efbaa6b0ef1" kindref="member">avcodec_get_supported_config()</ref>  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_codec_1a443e9ed8ca3cefcf0a518ab856df94aa" kindref="member">AVCodec::supported_framerates</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000001"/>use <ref refid="group__lavc__decoding_1gadd58e6b0bbca99fdbc547efbaa6b0ef1" kindref="member">avcodec_get_supported_config()</ref>  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_codec_1a5795bf22dc477bda4f95c76ee4075c12" kindref="member">AVCodec::supported_samplerates</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000003"/>use <ref refid="group__lavc__decoding_1gadd58e6b0bbca99fdbc547efbaa6b0ef1" kindref="member">avcodec_get_supported_config()</ref>  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_filter_context_1a68fddbcd268eed3340d0a0a182c45cec" kindref="member">AVFilterContext::command_queue</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000006"/>unused  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_filter_context_1a04b8bc41db69481e3264690943da8370" kindref="member">AVFilterContext::enable</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000007"/>unused  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_filter_context_1a0dac89bae07e73488366c27b383c3d0d" kindref="member">AVFilterContext::ready</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000009"/>this field should never have been accessed by callers  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="struct_a_v_filter_context_1ac555125f396f0ff2dfccaa6caccaaedf" kindref="member">AVFilterContext::var_values</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000008"/>unused  </para>
+</listitem>
+<varlistentry><term>Membre <ref refid="group__lavf__misc_1gac6a2ef43243de2aa50f7d40f0f3a92cf" kindref="member">avformat_transfer_internal_stream_timing_info</ref>  (const <ref refid="struct_a_v_output_format" kindref="compound">AVOutputFormat</ref> *ofmt, <ref refid="struct_a_v_stream" kindref="compound">AVStream</ref> *ost, const <ref refid="struct_a_v_stream" kindref="compound">AVStream</ref> *ist, enum AVTimebaseSource copy_tb)</term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000010"/>do not call this function  </para>
+</listitem>
+<varlistentry><term>Fichier <ref refid="dict_8h" kindref="compound">dict.h</ref>  </term></varlistentry>
+<listitem><para><anchor id="deprecated_1_deprecated000012"/> AVDictionary is provided for compatibility with libav. It is both in implementation as well as API inefficient. It does not scale and is extremely slow with large dictionaries. It is recommended that new code uses our tree container from tree.c/h where applicable, which uses AVL trees to achieve O(log n) performance. </para>
+</listitem>
+</variablelist>
+</para>
+    </detaileddescription>
+    <location file="deprecated"/>
+  </compounddef>
+</doxygen>
