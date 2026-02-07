@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
   <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
-    <compoundname>C:/Users/ahumeaub/Desktop/CLionProject/ClassSynchroniseurMultiVideo/src</compoundname>
+    <compoundname>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src</compoundname>
     <innerfile refid="main_8cpp">main.cpp</innerfile>
-    <innerfile refid="_synchroniseur_multi_video_8cpp">SynchroniseurMultiVideo.cpp</innerfile>
+    <innerfile refid="SynchroniseurMultiVideo_8cpp">SynchroniseurMultiVideo.cpp</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/Users/ahumeaub/Desktop/CLionProject/ClassSynchroniseurMultiVideo/src/"/>
+    <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/"/>
   </compounddef>
 </doxygen>

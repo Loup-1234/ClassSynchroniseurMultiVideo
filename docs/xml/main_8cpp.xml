@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="fr">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="fr">
   <compounddef id="main_8cpp" kind="file" language="C++">
     <compoundname>main.cpp</compoundname>
-    <includes refid="_synchroniseur_multi_video_8h" local="yes">../include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h</includes>
+    <includes refid="SynchroniseurMultiVideo_8h" local="yes">../include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h</includes>
     <includes local="no">vector</includes>
     <includes local="no">string</includes>
     <incdepgraph>
       <node id="2">
         <label>../include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h</label>
-        <link refid="_synchroniseur_multi_video_8h_source"/>
+        <link refid="SynchroniseurMultiVideo_8h_source"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
       </node>
       <node id="1">
-        <label>C:/Users/ahumeaub/Desktop/CLionProject/ClassSynchroniseurMultiVideo/src/main.cpp</label>
+        <label>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/main.cpp</label>
         <link refid="main_8cpp"/>
         <childnode refid="2" relation="include">
         </childnode>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/Users/ahumeaub/Desktop/CLionProject/ClassSynchroniseurMultiVideo/src/main.cpp" line="7" column="5" bodyfile="C:/Users/ahumeaub/Desktop/CLionProject/ClassSynchroniseurMultiVideo/src/main.cpp" bodystart="7" bodyend="21"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/main.cpp" line="7" column="5" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/main.cpp" bodystart="7" bodyend="42"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -59,21 +59,42 @@
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using<sp/>namespace<sp/></highlight><highlight class="normal">std;</highlight></codeline>
 <codeline lineno="6"><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>main()<sp/>{</highlight></codeline>
-<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_synchroniseur_multi_video" kindref="compound">SynchroniseurMultiVideo</ref><sp/>synchro;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classSynchroniseurMultiVideo" kindref="compound">SynchroniseurMultiVideo</ref><sp/>synchro;</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
-<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>mesVideos<sp/>=<sp/>{</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_ref.mp4&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_angle2.mp4&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_angle3.mp4&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_angle4.mp4&quot;</highlight><highlight class="normal">,</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_angle5.mp4&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>synchro.<ref refid="class_synchroniseur_multi_video_1abe9b4059307ef8a5e2c3a84eac6d3e8e" kindref="member">GenererVideoSynchronisee</ref>(mesVideos,<sp/></highlight><highlight class="stringliteral">&quot;sortie_synchro.mp4&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Configuration<sp/>de<sp/>l&apos;analyse<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>Durée<sp/>d&apos;analyse<sp/>:<sp/>60<sp/>secondes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>Plage<sp/>de<sp/>recherche<sp/>:<sp/>30<sp/>secondes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>-<sp/>Précision<sp/>(pas)<sp/>:<sp/>100<sp/>(plus<sp/>petit<sp/>=<sp/>plus<sp/>précis)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>synchro.<ref refid="classSynchroniseurMultiVideo_1a3db5bb0a5581e0e0ca223f125f8b40df" kindref="member">ConfigurerAnalyse</ref>(60.0,<sp/>30.0,<sp/>100);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Option<sp/>1<sp/>:<sp/>Utiliser<sp/>une<sp/>vidéo<sp/>comme<sp/>référence<sp/>(ancienne<sp/>méthode)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>mesVideos<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;video_ref.mp4&quot;,</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;video_angle2.mp4&quot;,</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;video_angle3.mp4&quot;,</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;video_angle4.mp4&quot;,</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;video_angle5.mp4&quot;,</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;video_angle6.mp4&quot;</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/><sp/><sp/><sp/>synchro.GenererVideoSynchronisee(mesVideos,<sp/>&quot;sortie_synchro.mp4&quot;);</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Option<sp/>2<sp/>:<sp/>Utiliser<sp/>une<sp/>musique<sp/>comme<sp/>référence</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>vector&lt;string&gt;<sp/>mesVideos<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_angle2.mp4&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_angle3.mp4&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_angle4.mp4&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_angle5.mp4&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;video_angle6.mp4&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Utilisation<sp/>de<sp/>la<sp/>surcharge<sp/>avec<sp/>fichier<sp/>audio<sp/>de<sp/>référence</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>synchro.<ref refid="classSynchroniseurMultiVideo_1abe9b4059307ef8a5e2c3a84eac6d3e8e" kindref="member">GenererVideoSynchronisee</ref>(</highlight><highlight class="stringliteral">&quot;musique_ref.mp3&quot;</highlight><highlight class="normal">,<sp/>mesVideos,<sp/></highlight><highlight class="stringliteral">&quot;sortie_synchro.mp4&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
     </programlisting>
-    <location file="C:/Users/ahumeaub/Desktop/CLionProject/ClassSynchroniseurMultiVideo/src/main.cpp"/>
+    <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/main.cpp"/>
   </compounddef>
 </doxygen>

@@ -19,6 +19,21 @@ class SynchroniseurMultiVideo {
     const int FREQUENCE_ECHANTILLONNAGE = 40000;
 
     /**
+     * @brief Durée de l'audio à extraire pour l'analyse (en secondes).
+     */
+    double dureeAnalyse = 60.0;
+
+    /**
+     * @brief Plage de recherche maximale pour le décalage (en secondes).
+     */
+    double plageRechercheMax = 30.0;
+
+    /**
+    * @brief Pas de précision pour l'analyse (plus petit = plus précis).
+    */
+    int pasDePrecision = 100;
+
+    /**
      * @brief Hauteur cible pour le redimensionnement des vidéos (en pixels).
      */
     const int HAUTEUR_CIBLE = 480;
@@ -46,7 +61,7 @@ class SynchroniseurMultiVideo {
      * @brief Extrait la piste audio d'un fichier vidéo vers un fichier brut.
      *
      * Utilise FFmpeg pour extraire l'audio, le convertir en mono, float 32-bit little-endian,
-     * à la fréquence d'échantillonnage définie. Seules les 30 premières secondes sont extraites.
+     * à la fréquence d'échantillonnage définie.
      *
      * @param fichierVideo Chemin du fichier vidéo source.
      * @param fichierAudioSortie Chemin du fichier audio de sortie (format brut).
@@ -86,6 +101,14 @@ public:
     ~SynchroniseurMultiVideo();
 
     /**
+     * @brief Configure les paramètres d'analyse.
+     * @param duree Durée de l'audio à analyser (en secondes).
+     * @param plage Plage de recherche maximale (en secondes).
+     * @param pas Pas de précision (1 pour précision maximale).
+     */
+    void ConfigurerAnalyse(double duree, double plage, int pas);
+
+    /**
      * @brief Génère une vidéo synchronisée à partir de plusieurs fichiers d'entrée.
      *
      * Orchestre le processus complet : extraction audio, calcul des décalages,
@@ -96,4 +119,14 @@ public:
      * @return true si la génération a réussi, false sinon.
      */
     bool GenererVideoSynchronisee(const vector<string> &fichiersEntree, const string &fichierSortie) const;
+
+    /**
+     * @brief Génère une vidéo synchronisée en utilisant un fichier audio externe comme référence.
+     *
+     * @param fichierAudioRef Chemin du fichier audio de référence.
+     * @param fichiersVideo Liste des chemins des fichiers vidéo à synchroniser.
+     * @param fichierSortie Chemin du fichier vidéo de sortie.
+     * @return true si la génération a réussi, false sinon.
+     */
+    bool GenererVideoSynchronisee(const string &fichierAudioRef, const vector<string> &fichiersVideo, const string &fichierSortie) const;
 };
