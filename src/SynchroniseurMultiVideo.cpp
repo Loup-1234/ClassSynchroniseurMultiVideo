@@ -39,6 +39,7 @@ void SynchroniseurMultiVideo::ExtraireAudio(const string &fichierVideo, const st
     // -hide_banner: Supprime l'affichage de la bannière FFmpeg.
     // -loglevel error: N'affiche que les messages d'erreur graves.
     // -i: Spécifie le fichier vidéo d'entrée.
+    // -vn: Ignore le flux vidéo (évite le décodage inutile).
     // -f f32le: Définit le format de sortie de l'audio en float 32-bit little-endian.
     // -ac 1: Convertit l'audio en mono.
     // -ar FREQUENCE_ECHANTILLONNAGE: Définit la fréquence d'échantillonnage de l'audio.
@@ -46,6 +47,7 @@ void SynchroniseurMultiVideo::ExtraireAudio(const string &fichierVideo, const st
 
     cmd << "ffmpeg -y -hide_banner -loglevel error "
             << "-i \"" << fichierVideo << "\" "
+            << "-vn "
             << "-f f32le -ac 1 -ar " << FREQUENCE_ECHANTILLONNAGE << " -t " << dureeAnalyse << " "
             << "\"" << fichierAudioSortie << "\"";
 
@@ -209,8 +211,8 @@ bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const vector<string> &fic
 
         // Mappe la sortie vidéo du filtre complexe et le flux audio de la première vidéo (référence)
         cmd << "-map \"[vout]\" -map 0:a ";
-        // Spécifie l'encodeur vidéo (libx264), le préréglage d'encodage (fast) et le fichier de sortie
-        cmd << "-c:v libx264 -preset fast \"" << fichierSortie << "\"";
+        // Spécifie l'encodeur vidéo (libx264), le format de pixel (yuv420p) pour la compatibilité, le préréglage d'encodage (fast) et le fichier de sortie
+        cmd << "-c:v libx264 -pix_fmt yuv420p -preset fast \"" << fichierSortie << "\"";
 
         // Exécute la commande FFmpeg
         if (system(cmd.str().c_str()) == 0) {
@@ -302,8 +304,8 @@ bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const string &fichierAudi
 
         // Mappe la sortie vidéo du filtre complexe et le flux audio de la première entrée (référence audio)
         cmd << "-map \"[vout]\" -map 0:a ";
-        // Spécifie l'encodeur vidéo (libx264), le préréglage d'encodage (fast) et le fichier de sortie
-        cmd << "-c:v libx264 -preset fast \"" << fichierSortie << "\"";
+        // Spécifie l'encodeur vidéo (libx264), le format de pixel (yuv420p) pour la compatibilité, le préréglage d'encodage (fast) et le fichier de sortie
+        cmd << "-c:v libx264 -pix_fmt yuv420p -preset fast \"" << fichierSortie << "\"";
 
         // Exécute la commande FFmpeg
         if (system(cmd.str().c_str()) == 0) {

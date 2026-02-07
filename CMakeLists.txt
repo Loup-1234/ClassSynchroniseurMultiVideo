@@ -3,15 +3,21 @@ project(ClassSynchroniseurMultiVideo)
 
 set(CMAKE_CXX_STANDARD 23)
 
+find_package(raylib CONFIG REQUIRED)
+
 # --- Configuration des Sources ---
 
 set(SOURCE_FILES
         src/main.cpp
         src/SynchroniseurMultiVideo.cpp
+        include/ClassAfficheurVideo/AfficheurVideo.cpp
+        include/raymedia/raymedia.c
 )
 
 set(HEADER_FILES
         include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h
+        include/ClassAfficheurVideo/AfficheurVideo.h
+        include/raymedia/raymedia.h
 )
 
 add_executable(ClassSynchroniseurMultiVideo ${SOURCE_FILES} ${HEADER_FILES})
@@ -29,6 +35,7 @@ if(WIN32)
     target_link_directories(ClassSynchroniseurMultiVideo PRIVATE ${FFMPEG_DIR}/lib)
 
     target_link_libraries(ClassSynchroniseurMultiVideo PRIVATE
+            raylib
             avcodec
             avformat
             avutil
@@ -41,6 +48,9 @@ else()
     message(STATUS "Configuration pour Linux...")
 
     find_package(PkgConfig REQUIRED)
+    find_package(glfw3 CONFIG REQUIRED)
+    find_package(OpenGL REQUIRED)
+    find_package(Threads REQUIRED)
 
     pkg_check_modules(FFMPEG REQUIRED IMPORTED_TARGET
             libavcodec
@@ -48,6 +58,17 @@ else()
             libavutil
             libswscale
             libswresample
+    )
+
+    target_link_libraries(ClassSynchroniseurMultiVideo PRIVATE
+            raylib
+            PkgConfig::FFMPEG
+            glfw
+            OpenGL::GL
+            Threads::Threads
+            m
+            dl
+            rt
     )
 
     target_link_libraries(ClassSynchroniseurMultiVideo PRIVATE PkgConfig::FFMPEG)
@@ -75,5 +96,5 @@ if (DOXYGEN_FOUND)
     )
 
     # Créer un groupe "Documentation" dans CLion pour faire propre
-    set_target_properties(doxygen_generate sphinx_generate PROPERTIES FOLDER "Documentation")
+    set_target_properties(doxygen_generate sphinx_generate PROPERTIES FOLDER "Doc")
 endif()
