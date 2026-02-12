@@ -3,8 +3,6 @@ project(ClassSynchroniseurMultiVideo)
 
 set(CMAKE_CXX_STANDARD 23)
 
-# --- Configuration des Sources ---
-
 set(SOURCE_FILES
         src/main.cpp
         src/SynchroniseurMultiVideo.cpp
@@ -16,10 +14,8 @@ set(HEADER_FILES
 
 add_executable(ClassSynchroniseurMultiVideo ${SOURCE_FILES} ${HEADER_FILES})
 
-# --- Configuration des Bibliothèques ---
+if (WIN32) # WINDOWS
 
-if(WIN32)
-    # --- WINDOWS ---
     message(STATUS "Configuration pour Windows...")
 
     set(FFMPEG_DIR "${CMAKE_SOURCE_DIR}/include/ffmpeg")
@@ -36,8 +32,8 @@ if(WIN32)
             swresample
     )
 
-else()
-    # --- LINUX ---
+else () # LINUX
+
     message(STATUS "Configuration pour Linux...")
 
     find_package(PkgConfig REQUIRED)
@@ -51,11 +47,13 @@ else()
     )
 
     target_link_libraries(ClassSynchroniseurMultiVideo PRIVATE PkgConfig::FFMPEG)
-endif()
+
+endif ()
 
 target_include_directories(ClassSynchroniseurMultiVideo PRIVATE include)
 
-# --- Documentation Target ---
+# Doxygen
+
 find_package(Doxygen)
 
 if (DOXYGEN_FOUND)
@@ -74,6 +72,7 @@ if (DOXYGEN_FOUND)
             DEPENDS doxygen_generate # Sphinx attend que Doxygen ait fini
     )
 
-    # Créer un groupe "Documentation" dans CLion pour faire propre
+    # Grouper dans "Documentation"
     set_target_properties(doxygen_generate sphinx_generate PROPERTIES FOLDER "Documentation")
-endif()
+
+endif ()

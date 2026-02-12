@@ -162,7 +162,7 @@ bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const vector<string> &fic
 
         // Boucle sur les vidéos cibles (à partir de la deuxième).
         for (int i = 1; i < fichiersEntree.size(); ++i) {
-            cout << "[2/3] Analyse video " << i+1 << " : " << flush;
+            cout << "[2/3] Analyse video " << i + 1 << " : " << flush;
 
             try {
                 // Extrait l'audio de la vidéo cible actuelle dans un fichier temporaire.
@@ -253,7 +253,7 @@ bool SynchroniseurMultiVideo::GenererVideoSynchronisee(const string &fichierAudi
 
         // Boucle sur les vidéos cibles.
         for (int i = 0; i < fichiersVideo.size(); ++i) {
-            cout << "[2/3] Analyse video " << i+1 << " : " << flush;
+            cout << "[2/3] Analyse video " << i + 1 << " : " << flush;
 
             try {
                 // Extrait l'audio de la vidéo cible actuelle dans un fichier temporaire.
