@@ -1,5 +1,4 @@
 #include "../include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h"
-#include "../include/ClassAfficheurVideo/AfficheurVideo.h"
 #include <vector>
 #include <string>
 
@@ -24,6 +23,7 @@ int main() {
         "video_angle5.mp4",
         "video_angle6.mp4"
     };
+
     synchro.GenererVideoSynchronisee(mesVideos, "sortie_synchro.mp4");
     */
 
@@ -37,9 +37,6 @@ int main() {
     };
 
     synchro.GenererVideoSynchronisee("musique_ref.mp3", mesVideos, "sortie_synchro.mp4");
-
-    AfficheurVideo app("sortie_synchro.mp4");
-    app.run();
 
     return 0;
 }

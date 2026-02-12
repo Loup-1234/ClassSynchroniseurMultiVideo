@@ -10,14 +10,10 @@ find_package(raylib CONFIG REQUIRED)
 set(SOURCE_FILES
         src/main.cpp
         src/SynchroniseurMultiVideo.cpp
-        include/ClassAfficheurVideo/AfficheurVideo.cpp
-        include/raymedia/raymedia.c
 )
 
 set(HEADER_FILES
         include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h
-        include/ClassAfficheurVideo/AfficheurVideo.h
-        include/raymedia/raymedia.h
 )
 
 add_executable(ClassSynchroniseurMultiVideo ${SOURCE_FILES} ${HEADER_FILES})
@@ -28,11 +24,8 @@ if(WIN32)
     # --- WINDOWS ---
     message(STATUS "Configuration pour Windows...")
 
-    set(FFMPEG_DIR "${CMAKE_SOURCE_DIR}/include/ffmpeg")
-
-    target_include_directories(ClassSynchroniseurMultiVideo PRIVATE ${FFMPEG_DIR}/include)
-
-    target_link_directories(ClassSynchroniseurMultiVideo PRIVATE ${FFMPEG_DIR}/lib)
+    target_include_directories(ClassSynchroniseurMultiVideo PRIVATE ${CMAKE_SOURCE_DIR}/include/ffmpeg/include)
+    target_link_directories(ClassSynchroniseurMultiVideo PRIVATE ${CMAKE_SOURCE_DIR}/include/ffmpeg/lib)
 
     target_link_libraries(ClassSynchroniseurMultiVideo PRIVATE
             raylib
