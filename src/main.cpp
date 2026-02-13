@@ -11,7 +11,7 @@ int main() {
     // - Durée d'analyse : 60 secondes
     // - Plage de recherche : 30 secondes
     // - Précision (pas) : 100 (plus petit = plus précis)
-    synchro.ConfigurerAnalyse(60.0, 30.0, 100);
+    synchro.configurerAnalyse(60.0, 30.0, 100);
 
     // Option 1 : Utiliser une vidéo comme référence (ancienne méthode)
     /*
@@ -24,7 +24,7 @@ int main() {
         "video_angle6.mp4"
     };
 
-    synchro.GenererVideoSynchronisee(mesVideos, "sortie_synchro.mp4");
+    synchro.genererVideoSynchronisee(mesVideos, "sortie_synchro.mp4");
     */
 
     // Option 2 : Utiliser une musique comme référence
@@ -36,7 +36,7 @@ int main() {
         "video_angle6.mp4"
     };
 
-    synchro.GenererVideoSynchronisee("musique_ref.mp3", mesVideos, "sortie_synchro.mp4");
+    synchro.genererVideoSynchronisee("musique_ref.mp3", mesVideos, "sortie_synchro.mp4");
 
     return 0;
 }

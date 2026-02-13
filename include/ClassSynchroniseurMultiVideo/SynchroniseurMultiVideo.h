@@ -39,6 +39,11 @@ class SynchroniseurMultiVideo {
     const int HAUTEUR_CIBLE = 480;
 
     /**
+     * @brief Largeur cible pour le redimensionnement des vidéos (en pixels).
+     */
+    const int LARGEUR_CIBLE = 854;
+
+    /**
      * @brief Nom du fichier temporaire pour l'audio de référence.
      */
     const string TEMP_AUDIO_REF = "temp_ref.raw";
@@ -53,8 +58,8 @@ class SynchroniseurMultiVideo {
      * @brief Structure stockant les informations relatives à une vidéo.
      */
     struct InfoVideo {
-        string chemin; /**< Chemin d'accès au fichier vidéo. */
-        double retardSecondes; /**< Retard calculé en secondes par rapport à la vidéo de référence. */
+        string chemin;          /**< Chemin d'accès au fichier vidéo. */
+        double retardSecondes;  /**< Retard calculé en secondes par rapport à la vidéo de référence. */
     };
 
     /**
@@ -67,7 +72,7 @@ class SynchroniseurMultiVideo {
      * @param fichierAudioSortie Chemin du fichier audio de sortie (format brut).
      * @throws runtime_error Si l'extraction échoue.
      */
-    void ExtraireAudio(const string &fichierVideo, const string &fichierAudioSortie) const;
+    void extraireAudio(const string &fichierVideo, const string &fichierAudioSortie) const;
 
     /**
      * @brief Charge des données audio brutes depuis un fichier.
@@ -78,7 +83,7 @@ class SynchroniseurMultiVideo {
      * @return Un vecteur de flottants représentant les échantillons audio.
      * @throws runtime_error Si le fichier ne peut pas être ouvert ou lu.
      */
-    static vector<float> ChargerAudioBrut(const string &nomFichier);
+    static vector<float> chargerAudioBrut(const string &nomFichier);
 
     /**
      * @brief Calcule le décalage temporel entre deux signaux audio.
@@ -90,7 +95,17 @@ class SynchroniseurMultiVideo {
      * @param cible Vecteur des échantillons de l'audio à synchroniser.
      * @return Le décalage en secondes (positif ou négatif). Retourne 0.0 en cas d'erreur.
      */
-    double CalculerDecalage(const vector<float> &ref, const vector<float> &cible) const;
+    double calculerDecalage(const vector<float> &ref, const vector<float> &cible) const;
+
+    /**
+     * @brief Exécute la commande FFmpeg pour générer la vidéo finale.
+     *
+     * @param listeVideos Liste des vidéos à assembler.
+     * @param fichierSortie Chemin du fichier de sortie.
+     * @param fichierAudioRef Chemin du fichier audio de référence (optionnel).
+     * @return true si succès, false sinon.
+     */
+    bool genererVideo(const vector<InfoVideo> &listeVideos, const string &fichierSortie, const string &fichierAudioRef = "") const;
 
 public:
     /**
@@ -106,7 +121,7 @@ public:
      * @param plage Plage de recherche maximale (en secondes).
      * @param pas Pas de précision (1 pour précision maximale).
      */
-    void ConfigurerAnalyse(double duree, double plage, int pas);
+    void configurerAnalyse(double duree, double plage, int pas);
 
     /**
      * @brief Génère une vidéo synchronisée à partir de plusieurs fichiers d'entrée.
@@ -118,7 +133,7 @@ public:
      * @param fichierSortie Chemin du fichier vidéo de sortie.
      * @return true si la génération a réussi, false sinon.
      */
-    bool GenererVideoSynchronisee(const vector<string> &fichiersEntree, const string &fichierSortie) const;
+    bool genererVideoSynchronisee(const vector<string> &fichiersEntree, const string &fichierSortie) const;
 
     /**
      * @brief Génère une vidéo synchronisée en utilisant un fichier audio externe comme référence.
@@ -128,6 +143,5 @@ public:
      * @param fichierSortie Chemin du fichier vidéo de sortie.
      * @return true si la génération a réussi, false sinon.
      */
-    bool GenererVideoSynchronisee(const string &fichierAudioRef, const vector<string> &fichiersVideo,
-                                  const string &fichierSortie) const;
+    bool genererVideoSynchronisee(const string &fichierAudioRef, const vector<string> &fichiersVideo, const string &fichierSortie) const;
 };
