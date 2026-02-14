@@ -183,7 +183,7 @@ bool SynchroniseurMultiVideo::genererVideo(const vector<InfoVideo> &listeVideos,
         cmd << "[v" << i << "]";
     }
 
-    cmd << "xstack=inputs=" << nbVideos << ":layout=";
+    cmd << "xstack=inputs=" << nbVideos << ":fill=black:layout=";
 
     for (int i = 0; i < nbVideos; ++i) {
         int r = i / cols;
