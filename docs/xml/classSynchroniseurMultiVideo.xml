@@ -11,7 +11,7 @@
         <argsstring></argsstring>
         <name>FREQUENCE_ECHANTILLONNAGE</name>
         <qualifiedname>SynchroniseurMultiVideo::FREQUENCE_ECHANTILLONNAGE</qualifiedname>
-        <initializer>= 40000</initializer>
+        <initializer>= 44100</initializer>
         <briefdescription>
 <para>Fréquence d&apos;échantillonnage audio utilisée pour l&apos;analyse (en Hz). </para>
         </briefdescription>
@@ -85,6 +85,22 @@
         </inbodydescription>
         <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="39" column="15" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" bodystart="39" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="variable" id="classSynchroniseurMultiVideo_1a687bb3c77831902a828778bc51b4d54a" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int SynchroniseurMultiVideo::LARGEUR_CIBLE</definition>
+        <argsstring></argsstring>
+        <name>LARGEUR_CIBLE</name>
+        <qualifiedname>SynchroniseurMultiVideo::LARGEUR_CIBLE</qualifiedname>
+        <initializer>= 854</initializer>
+        <briefdescription>
+<para>Largeur cible pour le redimensionnement des vidéos (en pixels). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="44" column="15" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="classSynchroniseurMultiVideo_1a05ebb0fdcb6976829b6ef1bdbe5a26c3" prot="private" static="no" mutable="no">
         <type>const string</type>
         <definition>const string SynchroniseurMultiVideo::TEMP_AUDIO_REF</definition>
@@ -99,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="44" column="18" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" bodystart="44" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="49" column="18" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" bodystart="49" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classSynchroniseurMultiVideo_1a11aa2d54a8fcce4aa1ca0d589bacf29f" prot="private" static="no" mutable="no">
         <type>const string</type>
@@ -115,16 +131,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="49" column="18" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" bodystart="49" bodyend="-1"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="54" column="18" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" bodystart="54" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-func">
-      <memberdef kind="function" id="classSynchroniseurMultiVideo_1adc0cee2e43449fd37e9b3628f140fb13" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classSynchroniseurMultiVideo_1ad01aa92a00c9e32225821ed998625356" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void SynchroniseurMultiVideo::ExtraireAudio</definition>
+        <definition>void SynchroniseurMultiVideo::extraireAudio</definition>
         <argsstring>(const string &amp;fichierVideo, const string &amp;fichierAudioSortie) const</argsstring>
-        <name>ExtraireAudio</name>
-        <qualifiedname>SynchroniseurMultiVideo::ExtraireAudio</qualifiedname>
+        <name>extraireAudio</name>
+        <qualifiedname>SynchroniseurMultiVideo::extraireAudio</qualifiedname>
         <param>
           <type>const string &amp;</type>
           <declname>fichierVideo</declname>
@@ -168,14 +184,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="70" column="10" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="34" bodyend="56"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="75" column="10" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="35" bodyend="57"/>
       </memberdef>
-      <memberdef kind="function" id="classSynchroniseurMultiVideo_1a4fc0c4ae85ea430acca209a707504550" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classSynchroniseurMultiVideo_1a9e181c1d47add84084f6806ee46ac740" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
-        <definition>double SynchroniseurMultiVideo::CalculerDecalage</definition>
+        <definition>double SynchroniseurMultiVideo::calculerDecalage</definition>
         <argsstring>(const vector&lt; float &gt; &amp;ref, const vector&lt; float &gt; &amp;cible) const</argsstring>
-        <name>CalculerDecalage</name>
-        <qualifiedname>SynchroniseurMultiVideo::CalculerDecalage</qualifiedname>
+        <name>calculerDecalage</name>
+        <qualifiedname>SynchroniseurMultiVideo::calculerDecalage</qualifiedname>
         <param>
           <type>const vector&lt; float &gt; &amp;</type>
           <declname>ref</declname>
@@ -212,16 +228,72 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="93" column="12" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="85" bodyend="133"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="98" column="12" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="86" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classSynchroniseurMultiVideo_1ad6c510a208a85645e2f98eca3d04ab56" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool SynchroniseurMultiVideo::genererVideo</definition>
+        <argsstring>(const vector&lt; InfoVideo &gt; &amp;listeVideos, const string &amp;fichierSortie, const string &amp;fichierAudioRef=&quot;&quot;) const</argsstring>
+        <name>genererVideo</name>
+        <qualifiedname>SynchroniseurMultiVideo::genererVideo</qualifiedname>
+        <param>
+          <type>const vector&lt; <ref refid="structSynchroniseurMultiVideo_1_1InfoVideo" kindref="compound">InfoVideo</ref> &gt; &amp;</type>
+          <declname>listeVideos</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fichierSortie</declname>
+        </param>
+        <param>
+          <type>const string &amp;</type>
+          <declname>fichierAudioRef</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Exécute la commande FFmpeg pour générer la vidéo finale. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>listeVideos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Liste des vidéos à assembler. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fichierSortie</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chemin du fichier de sortie. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>fichierAudioRef</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Chemin du fichier audio de référence (optionnel). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true si succès, false sinon. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="108" column="10" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="136" bodyend="262"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="private-static-func">
-      <memberdef kind="function" id="classSynchroniseurMultiVideo_1a5c6093f5c6028dd75953d0cc7e8827b9" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classSynchroniseurMultiVideo_1adb3588161f27c337e443fb99fa92ba59" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>vector&lt; float &gt;</type>
-        <definition>vector&lt; float &gt; SynchroniseurMultiVideo::ChargerAudioBrut</definition>
+        <definition>vector&lt; float &gt; SynchroniseurMultiVideo::chargerAudioBrut</definition>
         <argsstring>(const string &amp;nomFichier)</argsstring>
-        <name>ChargerAudioBrut</name>
-        <qualifiedname>SynchroniseurMultiVideo::ChargerAudioBrut</qualifiedname>
+        <name>chargerAudioBrut</name>
+        <qualifiedname>SynchroniseurMultiVideo::chargerAudioBrut</qualifiedname>
         <param>
           <type>const string &amp;</type>
           <declname>nomFichier</declname>
@@ -255,7 +327,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="81" column="19" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="58" bodyend="83"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="86" column="19" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="59" bodyend="84"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -273,14 +345,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="101" column="5" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="23" bodyend="26"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="117" column="5" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="24" bodyend="27"/>
       </memberdef>
-      <memberdef kind="function" id="classSynchroniseurMultiVideo_1a3db5bb0a5581e0e0ca223f125f8b40df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classSynchroniseurMultiVideo_1aea0b12defc20b15d719881b622ed1844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
-        <definition>void SynchroniseurMultiVideo::ConfigurerAnalyse</definition>
+        <definition>void SynchroniseurMultiVideo::configurerAnalyse</definition>
         <argsstring>(double duree, double plage, int pas)</argsstring>
-        <name>ConfigurerAnalyse</name>
-        <qualifiedname>SynchroniseurMultiVideo::ConfigurerAnalyse</qualifiedname>
+        <name>configurerAnalyse</name>
+        <qualifiedname>SynchroniseurMultiVideo::configurerAnalyse</qualifiedname>
         <param>
           <type>double</type>
           <declname>duree</declname>
@@ -326,14 +398,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="109" column="10" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="28" bodyend="32"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="125" column="10" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="29" bodyend="33"/>
       </memberdef>
-      <memberdef kind="function" id="classSynchroniseurMultiVideo_1abe9b4059307ef8a5e2c3a84eac6d3e8e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classSynchroniseurMultiVideo_1a7357c5321c0e861d83b1eb4199d18d3c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
-        <definition>bool SynchroniseurMultiVideo::GenererVideoSynchronisee</definition>
+        <definition>bool SynchroniseurMultiVideo::genererVideoSynchronisee</definition>
         <argsstring>(const vector&lt; string &gt; &amp;fichiersEntree, const string &amp;fichierSortie) const</argsstring>
-        <name>GenererVideoSynchronisee</name>
-        <qualifiedname>SynchroniseurMultiVideo::GenererVideoSynchronisee</qualifiedname>
+        <name>genererVideoSynchronisee</name>
+        <qualifiedname>SynchroniseurMultiVideo::genererVideoSynchronisee</qualifiedname>
         <param>
           <type>const vector&lt; string &gt; &amp;</type>
           <declname>fichiersEntree</declname>
@@ -370,14 +442,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="121" column="10" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="135" bodyend="228"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="137" column="10" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="264" bodyend="318"/>
       </memberdef>
-      <memberdef kind="function" id="classSynchroniseurMultiVideo_1a5ecde12a41e9b738ae863646489552a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="classSynchroniseurMultiVideo_1a9adfef940b9ce010c08b424ea6ccc153" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
-        <definition>bool SynchroniseurMultiVideo::GenererVideoSynchronisee</definition>
+        <definition>bool SynchroniseurMultiVideo::genererVideoSynchronisee</definition>
         <argsstring>(const string &amp;fichierAudioRef, const vector&lt; string &gt; &amp;fichiersVideo, const string &amp;fichierSortie) const</argsstring>
-        <name>GenererVideoSynchronisee</name>
-        <qualifiedname>SynchroniseurMultiVideo::GenererVideoSynchronisee</qualifiedname>
+        <name>genererVideoSynchronisee</name>
+        <qualifiedname>SynchroniseurMultiVideo::genererVideoSynchronisee</qualifiedname>
         <param>
           <type>const string &amp;</type>
           <declname>fichierAudioRef</declname>
@@ -425,7 +497,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="131" column="10" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="230" bodyend="321"/>
+        <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="147" column="10" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src/SynchroniseurMultiVideo.cpp" bodystart="320" bodyend="370"/>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -434,17 +506,19 @@
     <detaileddescription>
 <para>Cette classe analyse les pistes audio de plusieurs fichiers vidéo pour déterminer le décalage temporel entre elles et générer une vidéo synchronisée (par exemple, une vue mosaïque). </para>
     </detaileddescription>
-    <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="15" column="1" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" bodystart="15" bodyend="132"/>
+    <location file="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" line="15" column="1" bodyfile="/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo/SynchroniseurMultiVideo.h" bodystart="15" bodyend="149"/>
     <listofallmembers>
-      <member refid="classSynchroniseurMultiVideo_1a4fc0c4ae85ea430acca209a707504550" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>CalculerDecalage</name></member>
-      <member refid="classSynchroniseurMultiVideo_1a5c6093f5c6028dd75953d0cc7e8827b9" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>ChargerAudioBrut</name></member>
-      <member refid="classSynchroniseurMultiVideo_1a3db5bb0a5581e0e0ca223f125f8b40df" prot="public" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>ConfigurerAnalyse</name></member>
+      <member refid="classSynchroniseurMultiVideo_1a9e181c1d47add84084f6806ee46ac740" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>calculerDecalage</name></member>
+      <member refid="classSynchroniseurMultiVideo_1adb3588161f27c337e443fb99fa92ba59" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>chargerAudioBrut</name></member>
+      <member refid="classSynchroniseurMultiVideo_1aea0b12defc20b15d719881b622ed1844" prot="public" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>configurerAnalyse</name></member>
       <member refid="classSynchroniseurMultiVideo_1a8fc3737857ff19b76198a893569cf123" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>dureeAnalyse</name></member>
-      <member refid="classSynchroniseurMultiVideo_1adc0cee2e43449fd37e9b3628f140fb13" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>ExtraireAudio</name></member>
+      <member refid="classSynchroniseurMultiVideo_1ad01aa92a00c9e32225821ed998625356" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>extraireAudio</name></member>
       <member refid="classSynchroniseurMultiVideo_1a7511e956c6e9a93ac30d9aa5bffddcd7" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>FREQUENCE_ECHANTILLONNAGE</name></member>
-      <member refid="classSynchroniseurMultiVideo_1abe9b4059307ef8a5e2c3a84eac6d3e8e" prot="public" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>GenererVideoSynchronisee</name></member>
-      <member refid="classSynchroniseurMultiVideo_1a5ecde12a41e9b738ae863646489552a8" prot="public" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>GenererVideoSynchronisee</name></member>
+      <member refid="classSynchroniseurMultiVideo_1ad6c510a208a85645e2f98eca3d04ab56" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>genererVideo</name></member>
+      <member refid="classSynchroniseurMultiVideo_1a7357c5321c0e861d83b1eb4199d18d3c" prot="public" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>genererVideoSynchronisee</name></member>
+      <member refid="classSynchroniseurMultiVideo_1a9adfef940b9ce010c08b424ea6ccc153" prot="public" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>genererVideoSynchronisee</name></member>
       <member refid="classSynchroniseurMultiVideo_1af2a98bcabb273ce73a91d0eaf823118d" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>HAUTEUR_CIBLE</name></member>
+      <member refid="classSynchroniseurMultiVideo_1a687bb3c77831902a828778bc51b4d54a" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>LARGEUR_CIBLE</name></member>
       <member refid="classSynchroniseurMultiVideo_1af8bc8bd03e2026644f14f5ea70ccb600" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>pasDePrecision</name></member>
       <member refid="classSynchroniseurMultiVideo_1a66558ca7e4ce4fa01de5aa5cc17ca2f5" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>plageRechercheMax</name></member>
       <member refid="classSynchroniseurMultiVideo_1a11aa2d54a8fcce4aa1ca0d589bacf29f" prot="private" virt="non-virtual"><scope>SynchroniseurMultiVideo</scope><name>TEMP_AUDIO_CIBLE</name></member>

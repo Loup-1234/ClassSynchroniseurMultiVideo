@@ -1,78 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.16.1" xml:lang="fr">
-  <compound refid="classAfficheurVideo" kind="class"><name>AfficheurVideo</name>
-    <member refid="classAfficheurVideo_1afdd790cb7ab639421679b584d779d1b2" kind="variable"><name>video</name></member>
-    <member refid="classAfficheurVideo_1a4088e3111a211f6890e3e1fe74d29323" kind="variable"><name>duration</name></member>
-    <member refid="classAfficheurVideo_1a7b3c63c6d317374f3795ab12d8b524dc" kind="function"><name>AfficheurVideo</name></member>
-    <member refid="classAfficheurVideo_1a7c35d46d7f114cd3501f229fccade66c" kind="function"><name>~AfficheurVideo</name></member>
-    <member refid="classAfficheurVideo_1ac02044031693dee9ecf33c0be55e38a3" kind="function"><name>run</name></member>
-  </compound>
-  <compound refid="structBuffer" kind="struct"><name>Buffer</name>
-    <member refid="structBuffer_1a94ce0ed03c44f57ed15cd6779cfc3de9" kind="variable"><name>data</name></member>
-    <member refid="structBuffer_1a0c8eac480676021820092b63603ce44a" kind="variable"><name>state</name></member>
-  </compound>
-  <compound refid="structBufferState" kind="struct"><name>BufferState</name>
-    <member refid="structBufferState_1ad0ecaae8405924588b5ff653bb37fd3e" kind="variable"><name>readPos</name></member>
-    <member refid="structBufferState_1a9bacc65e78faad0cf78837c51ca08323" kind="variable"><name>writePos</name></member>
-    <member refid="structBufferState_1a2c15e6b02e6bcd6a68c52fb137b36106" kind="variable"><name>capacity</name></member>
-  </compound>
   <compound refid="structSynchroniseurMultiVideo_1_1InfoVideo" kind="struct"><name>SynchroniseurMultiVideo::InfoVideo</name>
     <member refid="structSynchroniseurMultiVideo_1_1InfoVideo_1a63ce9ff1a9c54f78ff70dc3adc8ddc98" kind="variable"><name>chemin</name></member>
     <member refid="structSynchroniseurMultiVideo_1_1InfoVideo_1a17e98b077524572f7e2befda3f29126c" kind="variable"><name>retardSecondes</name></member>
-  </compound>
-  <compound refid="structMediaConfig" kind="struct"><name>MediaConfig</name>
-    <member refid="structMediaConfig_1a8cc79f72bdb427e77d43b9fb92c187c3" kind="variable"><name>ioBufferSize</name></member>
-    <member refid="structMediaConfig_1aca6bfd3965b8319bedf9eec7e3f1bbdf" kind="variable"><name>videoQueueSize</name></member>
-    <member refid="structMediaConfig_1a906c3e8703e76455f839d83fecf26dfe" kind="variable"><name>audioQueueSize</name></member>
-    <member refid="structMediaConfig_1aa9bc10b23cfeeb7d985afaa1c5035768" kind="variable"><name>audioDecodedBufferSize</name></member>
-    <member refid="structMediaConfig_1a9f492bac8bddb16d315ee9d1e9c89584" kind="variable"><name>audioOutputFmt</name></member>
-    <member refid="structMediaConfig_1a2614e92da2d9bda95143d4e0d51eae15" kind="variable"><name>audioOutputChannels</name></member>
-    <member refid="structMediaConfig_1ac98f2ae789e44a75bf3cf3e214e03911" kind="variable"><name>maxAllowedDelay</name></member>
-    <member refid="structMediaConfig_1ac67ed75e096a79156c8dc36b1384cc87" kind="variable"><name>audioMaxUpdateSize</name></member>
-    <member refid="structMediaConfig_1a739fd665117945784bbaf67ee9dab515" kind="variable"><name>audioStreamBufferSize</name></member>
-  </compound>
-  <compound refid="structMediaContext" kind="struct"><name>MediaContext</name>
-    <member refid="structMediaContext_1ab892106bd6703ba7b70777041590c0d3" kind="variable"><name>formatContext</name></member>
-    <member refid="structMediaContext_1a94d1da600f42bcef1268140dd4be7653" kind="variable"><name>streams</name></member>
-    <member refid="structMediaContext_1a81b82c8ee7b79211614dd72fc370e5e0" kind="variable"><name>swsContext</name></member>
-    <member refid="structMediaContext_1ab4e7f895e4ee5db8e4431c8180c8f2a2" kind="variable"><name>videoOutputImage</name></member>
-    <member refid="structMediaContext_1a86666a64afacb0f68fdaa1f880f1126e" kind="variable"><name>alignedRgbData</name></member>
-    <member refid="structMediaContext_1a63416d01b4662ac0b446b77ff12a7f2c" kind="variable"><name>alignedRgbLinesize</name></member>
-    <member refid="structMediaContext_1a5ec0de4a7f3bbea303313d42d74e9efd" kind="variable"><name>swrContext</name></member>
-    <member refid="structMediaContext_1a0f9aba9daf1b05011095447afda3ae62" kind="variable"><name>audioOutputBuffer</name></member>
-    <member refid="structMediaContext_1a81b2e16a8f79d42cfcd8a8a1d280119c" kind="variable"><name>audioOutputFmt</name></member>
-    <member refid="structMediaContext_1a4ab752f71e7630a42795790b803e451e" kind="variable"><name>audioMaxUpdateSize</name></member>
-    <member refid="structMediaContext_1aeb1446447542ba812ccc1cbd59192f8f" kind="variable"><name>avPacket</name></member>
-    <member refid="structMediaContext_1ac80583183d7c6bd6f482bac355a4e419" kind="variable"><name>avFrame</name></member>
-    <member refid="structMediaContext_1ad6678ae2a3a9f08c740dcb093fbeec50" kind="variable"><name>state</name></member>
-    <member refid="structMediaContext_1a28d1151a7a7fd222f97df538271eb8d5" kind="variable"><name>timePos</name></member>
-    <member refid="structMediaContext_1a62513f28a4bae43263471eb9912aba5f" kind="variable"><name>loopPlay</name></member>
-  </compound>
-  <compound refid="structMediaProperties" kind="struct"><name>MediaProperties</name>
-    <member refid="structMediaProperties_1a75de4de09f65b1788eec61f518c7865c" kind="variable"><name>durationSec</name></member>
-    <member refid="structMediaProperties_1ad0444fa16303e4a0efba8210623dc6df" kind="variable"><name>avgFPS</name></member>
-    <member refid="structMediaProperties_1aec1fcfb23f4aadba51fbb19c79da34d1" kind="variable"><name>hasVideo</name></member>
-    <member refid="structMediaProperties_1abd0aa3e1f935e1c516ef8ec9c7e882b2" kind="variable"><name>hasAudio</name></member>
-  </compound>
-  <compound refid="structMediaStream" kind="struct"><name>MediaStream</name>
-    <member refid="structMediaStream_1a229d0a2df1d270778656404fc754e5f4" kind="variable"><name>videoTexture</name></member>
-    <member refid="structMediaStream_1aadcba798591a71224930b5ec2b6e21f7" kind="variable"><name>audioStream</name></member>
-    <member refid="structMediaStream_1a3e051b5a2f369038ec6ab566d36a5b8e" kind="variable"><name>ctx</name></member>
-  </compound>
-  <compound refid="structMediaStreamReader" kind="struct"><name>MediaStreamReader</name>
-    <member refid="structMediaStreamReader_1a2535b594891e3dc1af9048a24a4d07a7" kind="variable"><name>readFn</name></member>
-    <member refid="structMediaStreamReader_1a91a8f8ce5ff8d6aec6ef1ffbaca11a0c" kind="variable"><name>seekFn</name></member>
-    <member refid="structMediaStreamReader_1a3f6a57a685a78e6bd0e6c8e7e4c10b04" kind="variable"><name>userData</name></member>
-  </compound>
-  <compound refid="structPacketQueue" kind="struct"><name>PacketQueue</name>
-    <member refid="structPacketQueue_1a588b5ef58afe0ebcc8042242f2856e0c" kind="variable"><name>packets</name></member>
-    <member refid="structPacketQueue_1a27fa3d9fc6e525ea8722082502d2a20b" kind="variable"><name>state</name></member>
-  </compound>
-  <compound refid="structStreamDataContext" kind="struct"><name>StreamDataContext</name>
-    <member refid="structStreamDataContext_1a9b68961682b376ac77824e0510012e42" kind="variable"><name>codecCtx</name></member>
-    <member refid="structStreamDataContext_1a2d177d6a78954f644ca9b4d10305b40b" kind="variable"><name>pendingPackets</name></member>
-    <member refid="structStreamDataContext_1a853cbb20a0ff35cc47e7937b15c16b5b" kind="variable"><name>streamIdx</name></member>
-    <member refid="structStreamDataContext_1a0f83b185ff9ca10faf1c2ac047c8d5e0" kind="variable"><name>startPts</name></member>
   </compound>
   <compound refid="classSynchroniseurMultiVideo" kind="class"><name>SynchroniseurMultiVideo</name>
     <member refid="classSynchroniseurMultiVideo_1a7511e956c6e9a93ac30d9aa5bffddcd7" kind="variable"><name>FREQUENCE_ECHANTILLONNAGE</name></member>
@@ -80,175 +10,30 @@
     <member refid="classSynchroniseurMultiVideo_1a66558ca7e4ce4fa01de5aa5cc17ca2f5" kind="variable"><name>plageRechercheMax</name></member>
     <member refid="classSynchroniseurMultiVideo_1af8bc8bd03e2026644f14f5ea70ccb600" kind="variable"><name>pasDePrecision</name></member>
     <member refid="classSynchroniseurMultiVideo_1af2a98bcabb273ce73a91d0eaf823118d" kind="variable"><name>HAUTEUR_CIBLE</name></member>
+    <member refid="classSynchroniseurMultiVideo_1a687bb3c77831902a828778bc51b4d54a" kind="variable"><name>LARGEUR_CIBLE</name></member>
     <member refid="classSynchroniseurMultiVideo_1a05ebb0fdcb6976829b6ef1bdbe5a26c3" kind="variable"><name>TEMP_AUDIO_REF</name></member>
     <member refid="classSynchroniseurMultiVideo_1a11aa2d54a8fcce4aa1ca0d589bacf29f" kind="variable"><name>TEMP_AUDIO_CIBLE</name></member>
-    <member refid="classSynchroniseurMultiVideo_1adc0cee2e43449fd37e9b3628f140fb13" kind="function"><name>ExtraireAudio</name></member>
-    <member refid="classSynchroniseurMultiVideo_1a4fc0c4ae85ea430acca209a707504550" kind="function"><name>CalculerDecalage</name></member>
-    <member refid="classSynchroniseurMultiVideo_1a5c6093f5c6028dd75953d0cc7e8827b9" kind="function"><name>ChargerAudioBrut</name></member>
+    <member refid="classSynchroniseurMultiVideo_1ad01aa92a00c9e32225821ed998625356" kind="function"><name>extraireAudio</name></member>
+    <member refid="classSynchroniseurMultiVideo_1a9e181c1d47add84084f6806ee46ac740" kind="function"><name>calculerDecalage</name></member>
+    <member refid="classSynchroniseurMultiVideo_1ad6c510a208a85645e2f98eca3d04ab56" kind="function"><name>genererVideo</name></member>
+    <member refid="classSynchroniseurMultiVideo_1adb3588161f27c337e443fb99fa92ba59" kind="function"><name>chargerAudioBrut</name></member>
     <member refid="classSynchroniseurMultiVideo_1a3eb3d7a7d856da575313caca3a50ede6" kind="function"><name>~SynchroniseurMultiVideo</name></member>
-    <member refid="classSynchroniseurMultiVideo_1a3db5bb0a5581e0e0ca223f125f8b40df" kind="function"><name>ConfigurerAnalyse</name></member>
-    <member refid="classSynchroniseurMultiVideo_1abe9b4059307ef8a5e2c3a84eac6d3e8e" kind="function"><name>GenererVideoSynchronisee</name></member>
-    <member refid="classSynchroniseurMultiVideo_1a5ecde12a41e9b738ae863646489552a8" kind="function"><name>GenererVideoSynchronisee</name></member>
+    <member refid="classSynchroniseurMultiVideo_1aea0b12defc20b15d719881b622ed1844" kind="function"><name>configurerAnalyse</name></member>
+    <member refid="classSynchroniseurMultiVideo_1a7357c5321c0e861d83b1eb4199d18d3c" kind="function"><name>genererVideoSynchronisee</name></member>
+    <member refid="classSynchroniseurMultiVideo_1a9adfef940b9ce010c08b424ea6ccc153" kind="function"><name>genererVideoSynchronisee</name></member>
   </compound>
   <compound refid="namespacestd" kind="namespace"><name>std</name>
   </compound>
-  <compound refid="AfficheurVideo_8cpp" kind="file"><name>AfficheurVideo.cpp</name>
-    <member refid="AfficheurVideo_8cpp_1ad1fe71f9ccb3e6d92e514597114e790c" kind="define"><name>RAYGUI_IMPLEMENTATION</name></member>
-  </compound>
-  <compound refid="AfficheurVideo_8h" kind="file"><name>AfficheurVideo.h</name>
-  </compound>
   <compound refid="SynchroniseurMultiVideo_8h" kind="file"><name>SynchroniseurMultiVideo.h</name>
-  </compound>
-  <compound refid="raymedia_8c" kind="file"><name>raymedia.c</name>
-    <member refid="raymedia_8c_1a52a8c67405c41892537f726aad89941c" kind="define"><name>CLAMP</name></member>
-    <member refid="raymedia_8c_1a3acffbd305ee72dcd4593c0d8af64a4f" kind="define"><name>MIN</name></member>
-    <member refid="raymedia_8c_1afa99ec4acc4ecb2dc3c2d05da15d0e3f" kind="define"><name>MAX</name></member>
-    <member refid="raymedia_8c_1a7bb149f4e6de0d7096e1b5c7853f9b00" kind="enum"><name>@122240153302326204140370175250154321231044361250</name></member>
-    <member refid="raymedia_8c_1a7bb149f4e6de0d7096e1b5c7853f9b00a5a29ccf661ced0a8b27c5497befc0b53" kind="enumvalue"><name>STREAM_AUDIO</name></member>
-    <member refid="raymedia_8c_1a7bb149f4e6de0d7096e1b5c7853f9b00ad154869ab86a12262bf15bb8963c7572" kind="enumvalue"><name>STREAM_VIDEO</name></member>
-    <member refid="raymedia_8c_1a7bb149f4e6de0d7096e1b5c7853f9b00a9b16cb0724a98155269aad80d57ff8c7" kind="enumvalue"><name>STREAM_COUNT</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0" kind="enum"><name>@075023274021271035231375316307333246170153303022</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0a10b058effefb8408720d5959b4af3337" kind="enumvalue"><name>MEDIA_ERR_BASE</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0a4b46762f282dddaf776113bd993ad997" kind="enumvalue"><name>MEDIA_ERR_OVERFLOW</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0afc42587302f170b00156430e63a6e929" kind="enumvalue"><name>MEDIA_ERR_DECODE_AUDIO</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0a109ddf23b1c213924ed52876cb625860" kind="enumvalue"><name>MEDIA_ERR_UNKNOWN_STREAM</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0ac485596aa24eb000978f5039720422e9" kind="enumvalue"><name>MEDIA_ERR_GRAB_PACKET</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0a281e71241d483d12813c6c989f02a6ef" kind="enumvalue"><name>MEDIA_ERR_DUPLICATE_STREAM</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0ac4b59c41c42ca78f8528611ea0672f12" kind="enumvalue"><name>MEDIA_ERR_CODEC_ALLOC_FAILED</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0a1631c8126da53932e212cdc19db04d30" kind="enumvalue"><name>MEDIA_ERR_CTX_PARAMS_FAILED</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0a69d40bad4ee2479517bdd7d15542abe3" kind="enumvalue"><name>MEDIA_ERR_CODEC_OPEN_FAILED</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0a8c9026288cbc6690a6332968495ed7bf" kind="enumvalue"><name>MEDIA_ERR_SWSCALE_FAILED</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0a09ac10e2e04a41f03564035aab750bb9" kind="enumvalue"><name>MEDIA_RET_SUCCEED</name></member>
-    <member refid="raymedia_8c_1a630533591f58b9d6b4ae521bcba568b0af4516d130e5811e5c4d0e8d477ae2cd2" kind="enumvalue"><name>MEDIA_EOF</name></member>
-    <member refid="raymedia_8c_1a579fb2870c06014c245eec4d55664210" kind="typedef"><name>BufferState</name></member>
-    <member refid="raymedia_8c_1ad44bbbcaf2486fd371979e04f3391d11" kind="typedef"><name>PacketQueue</name></member>
-    <member refid="raymedia_8c_1a7feadaf37f40473cfc76921f8754c0f7" kind="typedef"><name>Buffer</name></member>
-    <member refid="raymedia_8c_1ac24493e5f6181670de5079169079d256" kind="typedef"><name>MediaConfig</name></member>
-    <member refid="raymedia_8c_1ad22f0211872803e9a1e181498203b966" kind="typedef"><name>StreamDataContext</name></member>
-    <member refid="raymedia_8c_1af76ef3a50f63684ea28dc3846057dc5e" kind="typedef"><name>MediaContext</name></member>
-    <member refid="raymedia_8c_1a8f27197c834b990059d9e6be1d469313" kind="variable"><name>MEDIA</name></member>
-    <member refid="raymedia_8c_1af9a598a588a191e536d082d839166c78" kind="function"><name>IsBufferFull</name></member>
-    <member refid="raymedia_8c_1a54b2d814415be9f7292480ff0a14c56e" kind="function"><name>IsBufferEmpty</name></member>
-    <member refid="raymedia_8c_1ab8009fb05b2e024e1556417e253a5dbe" kind="function"><name>GetBufferWritableSpace</name></member>
-    <member refid="raymedia_8c_1a9e63cf224e30f269734d9f6a5649fd10" kind="function"><name>GetBufferWritableSegmentSize</name></member>
-    <member refid="raymedia_8c_1a8a70034ff80e69ff69e0ed9464e27a6c" kind="function"><name>GetBufferReadableSpace</name></member>
-    <member refid="raymedia_8c_1ae6f4dfb33b3f582989a74972e055fd8d" kind="function"><name>GetBufferReadableSegmentSize</name></member>
-    <member refid="raymedia_8c_1a88279ea94ec95cff67989cb64679cb51" kind="function"><name>AdvanceWritePos</name></member>
-    <member refid="raymedia_8c_1aa9bafe3e776805bee1f8576ced58bcb1" kind="function"><name>AdvanceWritePosN</name></member>
-    <member refid="raymedia_8c_1acb1f9618e7f9b473f91ad35c5c2588d8" kind="function"><name>AdvanceReadPos</name></member>
-    <member refid="raymedia_8c_1a26022a4128d850a4b5f5666faf0009d3" kind="function"><name>AdvanceReadPosN</name></member>
-    <member refid="raymedia_8c_1aef2c2923dadbae156127fa90963cd205" kind="function"><name>LoadBuffer</name></member>
-    <member refid="raymedia_8c_1a2d6c86f8d0c57304f3b26001adfc7c95" kind="function"><name>UnloadBuffer</name></member>
-    <member refid="raymedia_8c_1ad0dcaf7b997ed6d2d3fc558d52d3bb3a" kind="function"><name>IsBufferReady</name></member>
-    <member refid="raymedia_8c_1ae952da554b5eb3dfbff844b6566316bc" kind="function"><name>ClearBuffer</name></member>
-    <member refid="raymedia_8c_1a6f4a8f0bba18c3328cc31d8ba459b1e3" kind="function"><name>WriteBuffer</name></member>
-    <member refid="raymedia_8c_1a259e5727024e8664c1d849c61ebf6b1d" kind="function"><name>ReadBuffer</name></member>
-    <member refid="raymedia_8c_1ab23e5b0c7317f80126fd8f973ef245ee" kind="function"><name>LoadQueue</name></member>
-    <member refid="raymedia_8c_1af6a08ef3b9eb07a911265f382fdb2be8" kind="function"><name>UnloadQueue</name></member>
-    <member refid="raymedia_8c_1ac7b8ea2bbf7518ff3fc16d81cc2fc89a" kind="function"><name>IsQueueReady</name></member>
-    <member refid="raymedia_8c_1afcc4c6aeab26a999bf97263476eba19e" kind="function"><name>ClearQueue</name></member>
-    <member refid="raymedia_8c_1a79617d20b611bbcfc088292008cf5051" kind="function"><name>IsQueueFull</name></member>
-    <member refid="raymedia_8c_1a1321b2584f56da69d9750563887699ff" kind="function"><name>IsQueueEmpty</name></member>
-    <member refid="raymedia_8c_1ac04824261b48c90b4b1ac949e9acb36c" kind="function"><name>EnqueuePacket</name></member>
-    <member refid="raymedia_8c_1abc0164868076d2e2b83bc6d61b727bcd" kind="function"><name>DequeuePacket</name></member>
-    <member refid="raymedia_8c_1a3e73b935840904b22c8bf08819556a93" kind="function"><name>PeekPacket</name></member>
-    <member refid="raymedia_8c_1a097307c85ae305e679c79ff4638b7505" kind="function"><name>AVPrintError</name></member>
-    <member refid="raymedia_8c_1a92759cfa6b316881253343cb478cead3" kind="function"><name>AVInitializePts</name></member>
-    <member refid="raymedia_8c_1afa675e298345cdbdc17992b8dabb1279" kind="function"><name>AVGrabPacket</name></member>
-    <member refid="raymedia_8c_1a09bd48c4a7416f51a4e59fb0decf759a" kind="function"><name>AVPeekPacket</name></member>
-    <member refid="raymedia_8c_1a4a849b0855f7304b8cf720cab1444401" kind="function"><name>AVDecodePacket</name></member>
-    <member refid="raymedia_8c_1a43a74e94b93897e3fe0b09bbfebf2d73" kind="function"><name>AVProcessAudioFrame</name></member>
-    <member refid="raymedia_8c_1a5161d57a35953dcc16ce1f2cde0cfb95" kind="function"><name>AVProcessVideoFrame</name></member>
-    <member refid="raymedia_8c_1a016c23c2ff034543b039904e22805d75" kind="function"><name>AVSeekVideoKeyframe</name></member>
-    <member refid="raymedia_8c_1a4f3746f22a912d148de7fa34a7c8d3be" kind="function"><name>AVSeek</name></member>
-    <member refid="raymedia_8c_1a43042a0c1a9d1767a5eda50b54dec2ad" kind="function"><name>AVSeekRelative</name></member>
-    <member refid="raymedia_8c_1a034690a41c4ed2043d83cf92e4610571" kind="function"><name>AVLoadCodecContext</name></member>
-    <member refid="raymedia_8c_1ab942897d18782487b4140dc8c5a40efc" kind="function"><name>AVUnloadCodecContext</name></member>
-    <member refid="raymedia_8c_1ad97f66abdd9017e545b7f1efdd795885" kind="function"><name>LoadMediaContext</name></member>
-    <member refid="raymedia_8c_1af907b5421b9d46bb6586e6f9122f66f6" kind="function"><name>UnloadMediaContext</name></member>
-    <member refid="raymedia_8c_1a0f8412d21b14ac839050e0aaf77602dd" kind="function"><name>LoadMediaFromContext</name></member>
-    <member refid="raymedia_8c_1a5c0cee42d59c666bde875459ece9cb77" kind="function"><name>NotifyEndOfStream</name></member>
-    <member refid="raymedia_8c_1af833eadde6cc5a653d061083488dd32d" kind="function"><name>UpdateState</name></member>
-    <member refid="raymedia_8c_1aa955f1208571c69eaa948748088509fd" kind="function"><name>HasStream</name></member>
-    <member refid="raymedia_8c_1ab1c50c0d577590a1730eb05d3cdb6d1c" kind="function"><name>SetMediaFlag</name></member>
-    <member refid="raymedia_8c_1a75209fdae5fb845a0f57372da6780f81" kind="function"><name>GetMediaFlag</name></member>
-    <member refid="raymedia_8c_1a45cfe4db9ccd9a020158d2e70eb8af00" kind="function"><name>GetMediaProperties</name></member>
-    <member refid="raymedia_8c_1aa267cbe8e2960cad0f87dd1aa79b9765" kind="function"><name>SetMediaPosition</name></member>
-    <member refid="raymedia_8c_1a770cba9e3bf234191b2d9b65ef215d98" kind="function"><name>GetMediaPosition</name></member>
-    <member refid="raymedia_8c_1a9eaf351d779aac8410138fd8911ec6b3" kind="function"><name>SetMediaLooping</name></member>
-    <member refid="raymedia_8c_1a2cfe8c18b0d10ded168ec7bbc9e6fb4f" kind="function"><name>LoadMedia</name></member>
-    <member refid="raymedia_8c_1a696fcd1b67452c19c271b9a1908516a2" kind="function"><name>LoadMediaEx</name></member>
-    <member refid="raymedia_8c_1aa7ce8cc1d78603e417acfb6c00881524" kind="function"><name>LoadMediaFromStream</name></member>
-    <member refid="raymedia_8c_1a4706b38f915d3c4233789ec13a1c0e2a" kind="function"><name>IsMediaValid</name></member>
-    <member refid="raymedia_8c_1a5cecb481f6e0223e56b107ea83e2a8f7" kind="function"><name>UnloadMedia</name></member>
-    <member refid="raymedia_8c_1ac19b63d56404ae0bf9e67ff80fcc2af8" kind="function"><name>GetMediaState</name></member>
-    <member refid="raymedia_8c_1ad8355c5728c4c462e83805dcf21b87c1" kind="function"><name>SetMediaState</name></member>
-    <member refid="raymedia_8c_1a410e37fba3c8692f6d27423ea488cb3f" kind="function"><name>UpdateMedia</name></member>
-    <member refid="raymedia_8c_1a9964f9c85fd6babaf494ccf52f9b1f7c" kind="function"><name>UpdateMediaEx</name></member>
-  </compound>
-  <compound refid="raymedia_8h" kind="file"><name>raymedia.h</name>
-    <member refid="raymedia_8h_1a022e723ecffa1e5fcc55ebe4b60f6d50" kind="enum"><name>MediaLoadFlag</name></member>
-    <member refid="raymedia_8h_1a022e723ecffa1e5fcc55ebe4b60f6d50a9a121437b01ff2c9d9c8ca04f1e95b9c" kind="enumvalue"><name>MEDIA_LOAD_AV</name></member>
-    <member refid="raymedia_8h_1a022e723ecffa1e5fcc55ebe4b60f6d50a5781e7daaeb84bc37e5d94d06bb7bb46" kind="enumvalue"><name>MEDIA_LOAD_NO_AUDIO</name></member>
-    <member refid="raymedia_8h_1a022e723ecffa1e5fcc55ebe4b60f6d50a5d3684abc83d3d81d7b0c42996be3844" kind="enumvalue"><name>MEDIA_LOAD_NO_VIDEO</name></member>
-    <member refid="raymedia_8h_1a022e723ecffa1e5fcc55ebe4b60f6d50ac17905115787b96c5ca10300cb91d1de" kind="enumvalue"><name>MEDIA_FLAG_LOOP</name></member>
-    <member refid="raymedia_8h_1a022e723ecffa1e5fcc55ebe4b60f6d50a50d1c7e1ca8797c4b3fed759eefdce2e" kind="enumvalue"><name>MEDIA_FLAG_NO_AUTOPLAY</name></member>
-    <member refid="raymedia_8h_1a8cf818f723ac1109e78b96ca75121d66" kind="enum"><name>MediaState</name></member>
-    <member refid="raymedia_8h_1a8cf818f723ac1109e78b96ca75121d66abec5477cd8ba5733f48ba7d46de65e75" kind="enumvalue"><name>MEDIA_STATE_INVALID</name></member>
-    <member refid="raymedia_8h_1a8cf818f723ac1109e78b96ca75121d66a234962feb6790b9266baa12be90133a1" kind="enumvalue"><name>MEDIA_STATE_STOPPED</name></member>
-    <member refid="raymedia_8h_1a8cf818f723ac1109e78b96ca75121d66aea0d52370d510641e67248f8d47e1a49" kind="enumvalue"><name>MEDIA_STATE_PAUSED</name></member>
-    <member refid="raymedia_8h_1a8cf818f723ac1109e78b96ca75121d66a88bd48378b6cfbc780d8b6a25c4ce6ae" kind="enumvalue"><name>MEDIA_STATE_PLAYING</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2" kind="enum"><name>MediaConfigFlag</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2afd85cedabe4bcdbe5963a34136418106" kind="enumvalue"><name>MEDIA_IO_BUFFER</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2a02a065b4eb1733996bc40f34fea25e65" kind="enumvalue"><name>MEDIA_VIDEO_QUEUE</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2aae6bcb1ee7af54b27e4dd24fe0932bc8" kind="enumvalue"><name>MEDIA_AUDIO_QUEUE</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2a90cd47e866373fab2125c20e1bf95828" kind="enumvalue"><name>MEDIA_AUDIO_DECODED_BUFFER</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2a60f757d1b54cc6e608358b9c5e14bd0a" kind="enumvalue"><name>MEDIA_AUDIO_STREAM_BUFFER</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2ae936e40bc1a43e76fe17882f951b374d" kind="enumvalue"><name>MEDIA_AUDIO_FORMAT</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2a3a0dc1b31fdb03be3223178ac9f0eec4" kind="enumvalue"><name>MEDIA_AUDIO_CHANNELS</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2a565c2a202d8a216465c750dd459ec8de" kind="enumvalue"><name>MEDIA_VIDEO_MAX_DELAY</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2a484e56109c47fe649e5a7ed24abba46f" kind="enumvalue"><name>MEDIA_AUDIO_MAX_DELAY</name></member>
-    <member refid="raymedia_8h_1aac9fbf3b6602d0154034265ab31207e2a6a87a77b4cce83eac4b4d252700fcf60" kind="enumvalue"><name>MEDIA_AUDIO_UPDATE</name></member>
-    <member refid="raymedia_8h_1a3902c9d1daad75e38382e67eb6fc18f0" kind="enum"><name>MediaAudioFormat</name></member>
-    <member refid="raymedia_8h_1a3902c9d1daad75e38382e67eb6fc18f0a3b413f47b57010357cd935989215d32f" kind="enumvalue"><name>AUDIO_FMT_U8</name></member>
-    <member refid="raymedia_8h_1a3902c9d1daad75e38382e67eb6fc18f0aabe597a9701d2af3533a39460781bbd0" kind="enumvalue"><name>AUDIO_FMT_S16</name></member>
-    <member refid="raymedia_8h_1a3902c9d1daad75e38382e67eb6fc18f0af416486b37b48471b7bab01ec6f9e5f5" kind="enumvalue"><name>AUDIO_FMT_S32</name></member>
-    <member refid="raymedia_8h_1a3902c9d1daad75e38382e67eb6fc18f0adf46ed28557af16132002e0447e9cf70" kind="enumvalue"><name>AUDIO_FMT_FLT</name></member>
-    <member refid="raymedia_8h_1a3902c9d1daad75e38382e67eb6fc18f0a63cc47d19d9b2279614c9102d7bcec82" kind="enumvalue"><name>AUDIO_FMT_DBL</name></member>
-    <member refid="raymedia_8h_1ac4115214702b4c8d5f073c16e8721580" kind="enum"><name>MediaStreamIOResult</name></member>
-    <member refid="raymedia_8h_1ac4115214702b4c8d5f073c16e8721580a107dac7aa7ec00a60ada71642c2990bc" kind="enumvalue"><name>MEDIA_IO_EOF</name></member>
-    <member refid="raymedia_8h_1ac4115214702b4c8d5f073c16e8721580a29e88fe0e049f8d067884f31726def7e" kind="enumvalue"><name>MEDIA_IO_INVALID</name></member>
-    <member refid="raymedia_8h_1abdacfbf597fc3667fd45d30e04f480d1" kind="typedef"><name>MediaStream</name></member>
-    <member refid="raymedia_8h_1ad935ee3cf176ef14348b6125ca511d00" kind="typedef"><name>MediaProperties</name></member>
-    <member refid="raymedia_8h_1a9355f8fb41f5ec320b5aea024c137aa5" kind="typedef"><name>MediaStreamReader</name></member>
-    <member refid="raymedia_8h_1a500a817021904a0ee9913464c95c9cca" kind="function"><name>LoadMedia</name></member>
-    <member refid="raymedia_8h_1a0493f0ec06a642ac71d257d76df576de" kind="function"><name>LoadMediaEx</name></member>
-    <member refid="raymedia_8h_1a25c70526b76ee4c3fc69155502e73e08" kind="function"><name>LoadMediaFromStream</name></member>
-    <member refid="raymedia_8h_1acc06c3eb089a80385019528fba7ba176" kind="function"><name>IsMediaValid</name></member>
-    <member refid="raymedia_8h_1a76556f7c70279e8951bbb59b94ece156" kind="function"><name>GetMediaProperties</name></member>
-    <member refid="raymedia_8h_1a56c8ad5c7920dba6bcc12834f0c45132" kind="function"><name>UpdateMedia</name></member>
-    <member refid="raymedia_8h_1a375feb24ec31a1508bab33ade48e014a" kind="function"><name>UpdateMediaEx</name></member>
-    <member refid="raymedia_8h_1a87914100f8bff139ff5c21eea1b2bc96" kind="function"><name>GetMediaState</name></member>
-    <member refid="raymedia_8h_1ae247253c93a6a014f04e542b48889eaa" kind="function"><name>SetMediaState</name></member>
-    <member refid="raymedia_8h_1ae07b54656966f92babc584590dc24f6d" kind="function"><name>GetMediaPosition</name></member>
-    <member refid="raymedia_8h_1a5593f5665baf7a26556f2cf1b146aea1" kind="function"><name>SetMediaPosition</name></member>
-    <member refid="raymedia_8h_1adb08e5a410d2345f7488e90bba0de3a5" kind="function"><name>SetMediaLooping</name></member>
-    <member refid="raymedia_8h_1a7aea8eddd1ea23f9480eeac4b1bde715" kind="function"><name>SetMediaFlag</name></member>
-    <member refid="raymedia_8h_1ac8b631dae6923f2966fedd656407f178" kind="function"><name>GetMediaFlag</name></member>
-    <member refid="raymedia_8h_1ae2ffabbc7df817413a40db03a142f769" kind="function"><name>UnloadMedia</name></member>
   </compound>
   <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
     <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
   </compound>
   <compound refid="SynchroniseurMultiVideo_8cpp" kind="file"><name>SynchroniseurMultiVideo.cpp</name>
   </compound>
-  <compound refid="dir_f0ee14a9e72797687d9b6570aa4a4b47" kind="dir"><name>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassAfficheurVideo</name>
-  </compound>
   <compound refid="dir_d86fe2cd60c9c6f9c688382c70563f5f" kind="dir"><name>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/ClassSynchroniseurMultiVideo</name>
   </compound>
   <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include</name>
-  </compound>
-  <compound refid="dir_800d3f80e9cac399e0b43dc198fca220" kind="dir"><name>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/include/raymedia</name>
   </compound>
   <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>/home/loup/CLionProjects/ClassSynchroniseurMultiVideo/src</name>
   </compound>

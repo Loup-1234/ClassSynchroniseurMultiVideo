@@ -14,7 +14,7 @@ int main() {
     synchro.configurerAnalyse(60.0, 30.0, 100);
 
     // Option 1 : Utiliser une vidéo comme référence (ancienne méthode)
-    /*
+
     vector<string> mesVideos = {
         "video_ref.mp4",
         "video_angle2.mp4",
@@ -25,8 +25,8 @@ int main() {
     };
 
     synchro.genererVideoSynchronisee(mesVideos, "sortie_synchro.mp4");
-    */
 
+    /*
     // Option 2 : Utiliser une musique comme référence
     vector<string> mesVideos = {
         "video_angle2.mp4",
@@ -37,6 +37,7 @@ int main() {
     };
 
     synchro.genererVideoSynchronisee("musique_ref.mp3", mesVideos, "sortie_synchro.mp4");
+    */
 
     return 0;
 }

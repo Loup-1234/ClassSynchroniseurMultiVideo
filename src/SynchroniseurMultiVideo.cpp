@@ -98,7 +98,7 @@ double SynchroniseurMultiVideo::calculerDecalage(const vector<float> &ref, const
 
         // Boucle de corrélation croisée
         for (int retard = -plageRecherche; retard < plageRecherche; retard += 20) {
-            // On ne vérifie pas chaque échantillon, on saute de pasDePrecision en pasDePrecision pour aller plus vitesse
+            // On ne vérifie pas chaque échantillon, on saute de pasDePrecision en pasDePrecision pour aller plus vite
             const int pas = pasDePrecision;
 
             // On ne compare que le tiers central
@@ -133,122 +133,155 @@ double SynchroniseurMultiVideo::calculerDecalage(const vector<float> &ref, const
     }
 }
 
-bool SynchroniseurMultiVideo::genererVideo(const vector<InfoVideo> &listeVideos, const string &fichierSortie, const string &fichierAudioRef) const {
-    cout << "[3/3] Generation de la video finale..." << endl;
+bool SynchroniseurMultiVideo::genererVideo(const vector<InfoVideo> &listeVideos, const string &fichierSortie,
+                                           const string &fichierAudioRef) const {
+    cout << "[3/3] Génération de la vidéo finale..." << endl;
 
     stringstream cmd;
 
-    // Commande FFmpeg de base avec options pour écraser la sortie, masquer la bannière et afficher les avertissements
+    // Construction de la commande FFmpeg.
+    // -y : Écrase le fichier de sortie s'il existe déjà.
+    // -hide_banner : Masque la bannière de copyright/version de FFmpeg au démarrage.
+    // -loglevel warning : Affiche uniquement les avertissements et erreurs (réduit le bruit dans la console).
     cmd << "ffmpeg -y -hide_banner -loglevel warning ";
 
-    // Si un fichier audio de référence est fourni, on l'ajoute en premier
+    // Si un fichier audio de référence externe est fourni, on l'ajoute comme première entrée (index 0).
     if (!fichierAudioRef.empty()) {
         cmd << "-i \"" << fichierAudioRef << "\" ";
     }
 
-    // Ajoute chaque vidéo d'entrée à la commande FFmpeg
+    // Ajout de chaque vidéo source à la commande.
     for (const auto &vid: listeVideos) {
-        // Si un décalage est détecté, applique l'option -ss pour démarrer la vidéo à partir de ce décalage
-        if (vid.retardSecondes > 0) cmd << "-ss " << vid.retardSecondes << " ";
-        // Ajoute le chemin de la vidéo en tant qu'entrée
+        // Si un retard (décalage) est détecté pour cette vidéo, on utilise l'option -ss (seek start).
+        // Cela permet de caler la vidéo au bon moment par rapport à l'audio de référence.
+        if (vid.retardSecondes > 0) {
+            cmd << "-ss " << vid.retardSecondes << " ";
+        }
+        // Ajout du fichier vidéo comme entrée.
         cmd << "-i \"" << vid.chemin << "\" ";
     }
 
-    // Début de la chaîne de filtres complexes
+    // Début de la définition du filtre complexe (-filter_complex).
+    // Ce filtre va permettre de redimensionner et d'assembler les vidéos en une grille.
     cmd << "-filter_complex \"";
 
-    // Détermine l'index de départ pour les vidéos (si audio ref externe, les vidéos commencent à 1)
+    // Détermination de l'index de départ des vidéos dans la liste des entrées FFmpeg.
+    // Si un audio externe est utilisé (index 0), la première vidéo est à l'index 1.
+    // Sinon, la première vidéo est à l'index 0.
     int indexVideoStart = fichierAudioRef.empty() ? 0 : 1;
     int nbVideos = listeVideos.size();
 
-    // Calcul de la grille (lignes x colonnes)
-    // On veut une grille aussi carrée que possible ou rectangulaire (ex: 2x2, 3x2, 3x3)
+    // Calcul des dimensions de la grille (lignes x colonnes).
+    // On cherche à obtenir une grille la plus carrée possible (ex: 4 vidéos -> 2x2, 6 vidéos -> 3x2).
     int cols = ceil(sqrt(nbVideos));
-    int rows = ceil((double)nbVideos / cols);
 
-    // Pour chaque vidéo, redimensionne à la taille cible
+    // Étape 1 : Redimensionnement de chaque vidéo.
+    // Chaque vidéo est redimensionnée à la taille cible (LARGEUR_CIBLE x HAUTEUR_CIBLE).
+    // On attribue une étiquette temporaire [v0], [v1], etc. à chaque sortie redimensionnée.
     for (int i = 0; i < nbVideos; ++i) {
-        cmd << "[" << (i + indexVideoStart) << ":v]scale=" << LARGEUR_CIBLE << ":" << HAUTEUR_CIBLE << "[v" << i << "];";
+        cmd << "[" << (i + indexVideoStart) << ":v]scale=" << LARGEUR_CIBLE << ":" << HAUTEUR_CIBLE << "[v" << i <<
+                "];";
     }
 
-    // Construction de la grille avec xstack
-    // xstack permet de positionner les vidéos dans une grille
-    // layout=0_0|w0_0|0_h0|w0_h0...
-    // Mais une méthode plus simple pour une grille régulière est d'utiliser hstack et vstack combinés,
-    // ou xstack avec une configuration de layout automatique si on connait les positions.
-    // Pour simplifier et être robuste, on va utiliser xstack avec layout dynamique.
-
-    cmd << "";
+    // Étape 2 : Assemblage des vidéos avec le filtre xstack.
+    // On liste d'abord toutes les étiquettes vidéo à assembler : [v0][v1]...
     for (int i = 0; i < nbVideos; ++i) {
         cmd << "[v" << i << "]";
     }
 
+    // Configuration du filtre xstack.
+    // inputs=N : nombre d'entrées vidéo.
+    // fill=black : couleur de fond pour les espaces vides (si la grille n'est pas complète).
+    // layout : définition de la position (x,y) de chaque vidéo.
     cmd << "xstack=inputs=" << nbVideos << ":fill=black:layout=";
 
+    // Génération dynamique de la disposition (layout).
+    // Le format est : x0_y0|x1_y1|x2_y2|...
+    // w0 représente la largeur de la première vidéo (toutes identiques ici), h0 la hauteur.
     for (int i = 0; i < nbVideos; ++i) {
-        int r = i / cols;
-        int c = i % cols;
+        int r = i / cols; // Indice de ligne
+        int c = i % cols; // Indice de colonne
 
+        // Séparateur entre les définitions de position
         if (i > 0) cmd << "|";
 
-        // Position X
-        if (c == 0) cmd << "0";
-        else {
-            for (int k=0; k<c; ++k) {
+        // Calcul de la position X (horizontale)
+        if (c == 0) {
+            cmd << "0"; // Première colonne : x = 0
+        } else {
+            // Colonnes suivantes : x = somme des largeurs précédentes
+            // Ici simplifié car toutes les largeurs sont w0.
+            // Ex: pour la 3ème colonne (c=2), on écrit w0+w0.
+            for (int k = 0; k < c; ++k) {
                 if (k > 0) cmd << "+";
-                cmd << "w0"; // On suppose toutes les largeurs identiques (w0)
+                cmd << "w0";
             }
         }
 
-        cmd << "_";
+        cmd << "_"; // Séparateur x_y
 
-        // Position Y
-        if (r == 0) cmd << "0";
-        else {
-            for (int k=0; k<r; ++k) {
+        // Calcul de la position Y (verticale)
+        if (r == 0) {
+            cmd << "0"; // Première ligne : y = 0
+        } else {
+            // Lignes suivantes : y = somme des hauteurs précédentes
+            // Ex: pour la 2ème ligne (r=1), on écrit h0.
+            for (int k = 0; k < r; ++k) {
                 if (k > 0) cmd << "+";
-                cmd << "h0"; // On suppose toutes les hauteurs identiques (h0)
+                cmd << "h0";
             }
         }
     }
 
+    // Étiquette de sortie du filtre complexe
     cmd << "[vout]\" ";
 
-    // Mappe la sortie vidéo du filtre complexe et le flux audio de la première entrée (référence)
+    // Mapping des flux pour le fichier de sortie.
+    // -map "[vout]" : Utilise la vidéo générée par le filtre complexe.
+    // -map 0:a : Utilise l'audio de la première entrée (fichier de référence ou première vidéo).
     cmd << "-map \"[vout]\" -map 0:a ";
-    // Spécifie l'encodeur vidéo (libx264), le format de pixel (yuv420p) pour la compatibilité, le préréglage d'encodage (fast) et le fichier de sortie
-    cmd << "-c:v libx264 -profile:v baseline -bf 0 -g 30 -pix_fmt yuv420p -preset fast \"" << fichierSortie << "\"";
 
-    // Exécute la commande FFmpeg
+    // Options d'encodage vidéo :
+
+    cmd << "-c:v libx264 " // Encodeur H.264.
+            << "-r 30 " // Définir le framerate à 30 FPS
+            << "-profile:v baseline " // Profil simple pour la compatibilité.
+            << "-tune zerolatency " // Optimisation pour réduire la latence.
+            << "-pix_fmt yuv420p " // Format de pixel standard pour la compatibilité.
+            << "-preset fast " // (ultrafast, superfast, veryfast, fast, medium, slow...)
+            << "-movflags +faststart \"" // Déplace les métadonnées au début du fichier.
+            << fichierSortie << "\"";
+
+    // Exécution de la commande système.
     if (system(cmd.str().c_str()) == 0) {
-        cout << "[Succes] Fichier genere : " << fichierSortie << endl;
+        cout << "[Succès] Fichier généré : " << fichierSortie << endl;
         return true;
     }
 
-    throw runtime_error("Une erreur est survenue lors de l'encodage FFMPEG.");
+    throw runtime_error("Une erreur est survenue lors de l'encodage FFmpeg.");
 }
 
 bool SynchroniseurMultiVideo::genererVideoSynchronisee(const vector<string> &fichiersEntree,
                                                        const string &fichierSortie) const {
     try {
         if (fichiersEntree.size() < 2) {
-            throw runtime_error("Il faut fournir au moins 2 fichiers video.");
+            throw runtime_error("Il faut fournir au moins 2 fichiers vidéos.");
         }
 
-        cout << "Traitement de " << fichiersEntree.size() << " videos" << endl;
+        cout << "Traitement de " << fichiersEntree.size() << " vidéos" << endl;
 
-        cout << "[1/3] Analyse de la reference video..." << endl;
+        cout << "[1/3] Analyse de la référence vidéo..." << endl;
 
         try {
             extraireAudio(fichiersEntree[0], TEMP_AUDIO_REF);
         } catch (const exception &e) {
-            throw runtime_error(string("Erreur reference: ") + e.what());
+            throw runtime_error(string("Erreur référence : ") + e.what());
         }
 
         vector<float> audioRef = chargerAudioBrut(TEMP_AUDIO_REF);
 
         if (audioRef.empty()) {
-            throw runtime_error("Fichier audio reference vide ou illisible.");
+            throw runtime_error("Fichier audio référence vide ou illisible.");
         }
 
         vector<InfoVideo> listeVideos;
@@ -258,7 +291,7 @@ bool SynchroniseurMultiVideo::genererVideoSynchronisee(const vector<string> &fic
 
         // Boucle sur les vidéos cibles (à partir de la deuxième).
         for (int i = 1; i < fichiersEntree.size(); ++i) {
-            cout << "[2/3] Analyse video " << i + 1 << " : " << flush;
+            cout << "[2/3] Analyse vidéo " << i + 1 << " : " << flush;
 
             try {
                 // Extrait l'audio de la vidéo cible actuelle dans un fichier temporaire.
@@ -271,9 +304,9 @@ bool SynchroniseurMultiVideo::genererVideoSynchronisee(const vector<string> &fic
                 // Ajoute la vidéo à la liste avec son décalage.
                 listeVideos.push_back({fichiersEntree[i], decalage});
 
-                cout << "OK (Retard: " << fixed << setprecision(3) << decalage << "s)" << endl;
+                cout << "OK (Retard : " << fixed << setprecision(3) << decalage << "s)" << endl;
             } catch (const exception &e) {
-                cout << "Echec (" << e.what() << ") - Video ignoree" << endl;
+                cout << "Échec (" << e.what() << ") - Vidéo ignorée" << endl;
             }
         }
 
@@ -289,28 +322,28 @@ bool SynchroniseurMultiVideo::genererVideoSynchronisee(const string &fichierAudi
                                                        const string &fichierSortie) const {
     try {
         if (fichiersVideo.empty()) {
-            throw runtime_error("Il faut fournir au moins 1 fichier video.");
+            throw runtime_error("Il faut fournir au moins 1 fichier vidéo.");
         }
 
-        cout << "[1/3] Analyse de la reference audio..." << endl;
+        cout << "[1/3] Analyse de la référence audio..." << endl;
 
         try {
             extraireAudio(fichierAudioRef, TEMP_AUDIO_REF);
         } catch (const exception &e) {
-            throw runtime_error(string("Erreur reference audio: ") + e.what());
+            throw runtime_error(string("Erreur référence audio : ") + e.what());
         }
 
         vector<float> audioRef = chargerAudioBrut(TEMP_AUDIO_REF);
 
         if (audioRef.empty()) {
-            throw runtime_error("Fichier audio reference vide ou illisible.");
+            throw runtime_error("Fichier audio référence vide ou illisible.");
         }
 
         vector<InfoVideo> listeVideos;
 
         // Boucle sur les vidéos cibles.
         for (int i = 0; i < fichiersVideo.size(); ++i) {
-            cout << "[2/3] Analyse video " << i + 1 << " : " << flush;
+            cout << "[2/3] Analyse vidéo " << i + 1 << " : " << flush;
 
             try {
                 // Extrait l'audio de la vidéo cible actuelle dans un fichier temporaire.
@@ -323,9 +356,9 @@ bool SynchroniseurMultiVideo::genererVideoSynchronisee(const string &fichierAudi
                 // Ajoute la vidéo à la liste avec son décalage.
                 listeVideos.push_back({fichiersVideo[i], decalage});
 
-                cout << "OK (Retard: " << fixed << setprecision(3) << decalage << "s)" << endl;
+                cout << "OK (Retard : " << fixed << setprecision(3) << decalage << "s)" << endl;
             } catch (const exception &e) {
-                cout << "Echec (" << e.what() << ") - Video ignoree" << endl;
+                cout << "Échec (" << e.what() << ") - Vidéo ignorée" << endl;
             }
         }
 
