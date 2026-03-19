@@ -1,0 +1,34 @@
+sequenceDiagram
+    participant Main
+    participant Synchro as SynchroniseurMultiVideo
+    participant FFmpeg
+
+    Main->>Synchro: configurerAnalyse(duree, plage, pas)
+    Main->>Synchro: genererVideoSynchronisee(fichiersEntree, fichierSortie)
+    activate Synchro
+
+    activate FFmpeg
+    Synchro->>FFmpeg: extraireAudio(fichiersEntree[0], TEMP_AUDIO_REF)
+    FFmpeg-->>Synchro: [Fichier brut]
+    deactivate FFmpeg
+
+    Synchro->>Synchro: chargerAudioBrut(TEMP_AUDIO_REF)
+
+    loop Pour chaque 'N' vidéo
+        activate FFmpeg
+        Synchro->>FFmpeg: extraireAudio(fichiersEntree[i], TEMP_AUDIO_CIBLE)
+        FFmpeg-->>Synchro: [Fichier brut]
+        deactivate FFmpeg
+
+        Synchro->>Synchro: chargerAudioBrut(TEMP_AUDIO_CIBLE)
+
+        Synchro->>Synchro: calculerDecalage(audioRef, audioCible)
+    end
+
+    activate FFmpeg
+    Synchro->>FFmpeg: genererVideo(listeVideos, fichierSortie)
+    FFmpeg-->>Synchro: [Vidéo finale]
+    deactivate FFmpeg
+
+    Synchro-->>Main: true
+    deactivate Synchro
